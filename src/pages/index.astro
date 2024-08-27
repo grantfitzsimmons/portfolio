@@ -12,8 +12,8 @@ import astro from '../assets/about-astro.png'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['lorem', 'ipsum']
-const frontend = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
+const languages = ['SQL',  'Python', 'HTML', 'CSS']
+const technologies = ['Git', 'Visual Studio', 'Lucidchart', 'Zoom', 'Discourse', 'Asana', 'Linux', 'macOS', 'Windows', 'Excel']
 const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
 const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
 
@@ -67,7 +67,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					<Label
 						title='Connect on Linkedin'
 						as='a'
-						href='https://www.linkedin.com/in/example/'
+						href='https://www.linkedin.com/in/grant-fitzsimmons-9b776b196'
 						target='_blank'
 					>
 						<svg
@@ -109,27 +109,30 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='Experience'>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
+				heading='Software Analyst & Technical Services Coordinator'
+				subheading='Specify Collections Consortium'
+				date='Feb 2024 - Present'
+				imagePath='/src/assets/scc.jpeg'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-					</li>
+					<li>Manage customer support operations and user engagement for Specify software, serving as the primary liaison between users and the development team to prioritize features and address user needs.</li>
+					<li>Established the <a class="text-blue-500" href="discourse.specifysoftware.org">Specify Community Forum</a> and authored over 600 topics, contributing more than 1,100 updates to the code base on GitHub while leading quality assurance for Specify 7.</li>
+					<li>Collaborated with over 300 research collections globally, facilitating data management, standardization, and the GeoSpecify initiative to enhance software applications in geosciences.</li>
 				</ul>
 			</Card>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
+				heading='Technical Support Manager'
+				subheading='Specify Collections Consortium'
+				date='May 2022 - February 2024'
+				altText='Lorem, ipsum dolor sit'
+				imageClass='h-12 w-auto md:-left-16'
+			/>
+			<Card
+				heading='Software and Data Management Specialist'
+				subheading='Specify Collections Consortium'
+				date='Oct 2021 - May 2022'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			/>
@@ -166,10 +169,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		<Section title='Projects'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
-					href='https://www.google.com'
-					heading='Consectetur'
-					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-					imagePath='/src/assets/coming-soon.png'
+					href='https://discourse.specifysoftware.org'
+					heading='Specify Community Forum'
+					subheading='Established and maintain the Specify Community Forum, a platform for Specify users to collaborate, discuss, and read documentation.'
+					imagePath='/src/assets/speciforum.png'
 					altText='Example'
 					class='w-full sm:w-1/2'
 				/>
@@ -209,7 +212,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='Skills'>
 			<SkillLayout title='Languages' skills={languages} />
-			<SkillLayout title='Frontend' skills={frontend} />
+			<SkillLayout title='Technologies' skills={technologies} />
 			<SkillLayout title='Backend' skills={backend} />
 			<SkillLayout title='Others' skills={others} />
 		</Section>
