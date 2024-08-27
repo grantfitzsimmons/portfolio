@@ -22,6 +22,13 @@ const PRODUCTIVITY = [
 		iconBgColour: '#414350'
 	},
 	{
+		name: 'Slack',
+		description: 'Work Messaging',
+		href: 'https://slack.com/',
+		iconPath: 'slack',
+		iconBgColour: '#A18470'
+	},
+	{
 		name: 'Notion',
 		description: 'Note Taking',
 		href: 'https://www.notion.so/product',
@@ -29,11 +36,11 @@ const PRODUCTIVITY = [
 		iconBgColour: '#EFEFEE'
 	},
 	{
-		name: 'Obsidian',
-		description: 'Long-form Writing',
-		href: 'https://obsidian.md/',
-		iconPath: 'obsidian',
-		iconBgColour: '#7A3EE8'
+		name: 'Excel',
+		description: 'Spreadsheets',
+		href: 'https://www.microsoft.com/en-us/microsoft-365/excel',
+		iconPath: 'excel',
+		iconBgColour: '#227445'
 	}
 ]
 
@@ -46,13 +53,21 @@ const DEVELOPMENT = [
 		iconBgColour: '#2C2C32'
 	},
 	{
-		name: 'ChatGPT',
-		description: 'AI',
-		href: 'https://chat.openai.com/',
-		iconPath: 'chatgpt',
-		iconBgColour: '#06A67F'
+		name: 'BBEdit',
+		description: 'Plain Text Editor',
+		href: 'https://www.barebones.com/products/bbedit/',
+		iconPath: '/src/icons/bbedit.png',
+		iconBgColour: '#807DC0'
+	},
+	{
+		name: 'DBeaver',
+		description: 'Database Manager',
+		href: 'https://dbeaver.io/',
+		iconPath: 'dbeaver',
+		iconBgColour: '#A18470'
 	}
 ]
+
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -79,9 +94,9 @@ const DEVELOPMENT = [
 				<p>Tools and software I use daily</p>
 			</div>
 
-			<ToolSection title='Design' tools={DESIGN} />
 			<ToolSection title='Productivity' tools={PRODUCTIVITY} />
 			<ToolSection title='Development' tools={DEVELOPMENT} />
+			<ToolSection title='Design' tools={DESIGN} />
 		</div>
 	</div>
 </PageLayout>
