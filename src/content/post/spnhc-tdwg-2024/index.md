@@ -32,7 +32,7 @@ I presented a talk titled "Digitization Planning for Large Collections with Spec
 ![Me at the podium speaking](slides.jpg)
 *Not many images of me speaking to choose from, but this should give you an idea of the setup.*
 
-<embed src="/src/assets/spnhctdwg2024/largecollections.pdf" width="100%" height="500" />
+<embed src="/public/spnhctdwg2024/largecollections.pdf" width="100%" height="500" />
 
 
 In my presentation, I discussed how the Specify Collections Consortium (SCC) has supported research collections worldwide for over 35 years through its intuitive and customizable software platform. I shared insights from our collaborations with universities and federal agencies, focusing on the development of frameworks to standardize workflows for managing large collections. 

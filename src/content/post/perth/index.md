@@ -52,7 +52,7 @@ The event concluded with an interactive Q&A session that provided valuable insig
 
 To start a workshop like this, I typically present a short (one-hour) overview of the topics we will cover. A PDF of this session is available for reference below:
 
-<embed src="/src/assets/perth/Specify101.pdf" width="100%" height="500" />
+<embed src="/public/perth/Specify101.pdf" width="100%" height="500" />
 
 This doesn't include the in-depth commentary that accompanies it, but if you're interested in hearing more you can always set up a [meeting with me](mailto:me@grantfitzsimmons.com) or another member of the Specify team!
 
