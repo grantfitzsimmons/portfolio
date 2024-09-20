@@ -6,7 +6,7 @@ updatedDate: "20 Sep 2024"
 coverImage:
   src: "./workshop_crowd.jpeg"
   alt: "Photo of the workshop audience"
-tags: ["specify"]
+tags: ["specify","travel"]
 draft: false
 ---
 

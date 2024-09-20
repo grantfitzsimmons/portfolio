@@ -4,14 +4,38 @@ description: "My second year at the SPNHC conference and first at TDWG, this tim
 publishDate: "21 September 2024"
 updatedDate: "21 September 2024"
 coverImage:
-  src: "./cover.png"
+  src: "./cover.jpeg"
   alt: "SPNHC-TDWG 2024"
-tags: ["specify"]
+tags: ["specify", "travel"]
 draft: true
 ---
 
-I had the opportunity to travel to San Francisco, California, last May to attend my first SPNHC[^1] conference. This meeting is exceptionally important for people in the biodiversity field.
+I had the opportunity to travel to San Francisco, California, last May to attend my first SPNHC[^1] (often pronounced "spinach") conference. This meeting is exceptionally important for people in the biodiversity field, as it serves as a vital platform for software providers (such as the Specify group), researchers, and institutions to share their latest findings, innovations, and best practices in natural history collections and biodiversity conservation.
 
-[^1]: The Society for the Preservation of Natural History Collections (SPNHC) is an international organization devoted to the preservation, conservation and management of natural history collections.
+Discussions and talks covered topics ranging from specimen management and preservation techniques to the integration of technology in specimen management and research. These meetings often foster collaboration between museum curators, conservationists, and educators. The conference emphasizes the importance of monitoring biodiversity, including presentations on changes and discoveries in our ecosystems, and addresses the urgent need for preservation amid climate change and habitat loss.
 
-[^2]: A central outdoor gathering place or town square, often featuring a [campanile](https://en.wikipedia.org/wiki/Bell_tower)
+For our team, the SPNHC conference provides an invaluable opportunity for networking, allowing us to forge connections with prospective and current Specify users that can lead to future collaborations and data conversions. The workshops and presentations not only inspire new ideas but also equip attendees with practical knowledge that can be applied at their own institutions.
+
+This year, SPNHC held a joint conference with TDWG[^2], known as [SPNHC-TDWG 2024](https://spnhc.org/events/event/spnhc-tdwg-2024/), which took place at the Okinawa Convention Centre in Okinawa, Japan, from September 2 to 6.
+
+## My Sessions
+
+I presented a talk titled "Digitization Planning for Large Collections with Specify 7" (https://doi.org/10.3897/biss.8.133987). 
+
+In my presentation, I discussed how the Specify Collections Consortium (SCC) has supported research collections worldwide for over 35 years through its intuitive and customizable software platform. I shared insights from our collaborations with universities and federal agencies, focusing on the development of frameworks to standardize workflows for managing large collections. 
+
+I addressed common hurdles in data preparation, such as unstandardized formats and unparsed taxonomy, and shared strategies to overcome these issues. We explored the complexities of data sharing between collections, discussing how to balance centralized coordination with individual collection needs. 
+
+I emphasized the importance of effective communication and collaboration among staff and volunteers during the transition to a new collections management system. Drawing on our extensive institutional experience, I provided a framework to help organizations navigate the challenges of implementing a collections management system, ultimately aiming to enhance the preservation and accessibility of natural history collections worldwide, with a future focus on geoscience collections.
+
+```
+Biodiversity Information Science and Standards  
+2024-08-07 | Journal article  
+DOI: 10.3897/biss.8.133987  
+Part of ISSN: 2535-0897  
+Contributors: Grant Fitzsimmons; Theresa Miller  
+```
+
+[^1]: The Society for the Preservation of Natural History Collections (SPNHC) is an international organization devoted to the preservation, conservation, and management of natural history collections.
+
+[^2]: Biodiversity Information Standards (TDWG), pronounced "tad-wig," develops and maintains data standards that support the integration of primary biodiversity information across disciplines, organizations, and nations. Its annual conference has become a preeminent forum for advancing biodiversity informatics.

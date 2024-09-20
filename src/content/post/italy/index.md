@@ -1,5 +1,5 @@
 ---
-title: "Paderno del Grappa"
+title: "Paderno del Grappa, Italy"
 description: "A particularly beautiful afternoon in Paderno, Italy"
 publishDate: "6 June 2022"
 updatedDate: "6 June 2022"
