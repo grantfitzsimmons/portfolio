@@ -17,9 +17,9 @@ const technologies = ['Git', 'Visual Studio', 'Lucidchart', 'Zoom', 'Discourse',
 // const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
 // const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
 
-// const MAX_POSTS = 3
-// const allPosts = await getAllPosts()
-// const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+const MAX_POSTS = 3
+const allPosts = await getAllPosts()
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -101,9 +101,9 @@ const technologies = ['Git', 'Visual Studio', 'Lucidchart', 'Zoom', 'Discourse',
 				I love working with people and technology.
 			</p>
 		</Section>
-		<!-- {
+		{
 			allPostsByDate.length > 0 && (
-				<Section title='Posts'>
+				<Section title='Blog Posts'>
 					<ul class='flex flex-col gap-y-2'>
 						{allPostsByDate.map((p) => (
 							<li class='flex flex-col gap-x-2 sm:flex-row'>
@@ -113,7 +113,7 @@ const technologies = ['Git', 'Visual Studio', 'Lucidchart', 'Zoom', 'Discourse',
 					</ul>
 				</Section>
 			)
-		} -->
+		}
 
 		<Section title='Experience'>
 			<Card
