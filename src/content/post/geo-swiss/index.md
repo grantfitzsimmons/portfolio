@@ -19,6 +19,7 @@ Specify is a software program designed to help natural history and geoscience mu
 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ZykWkjf6ZLD2eE5kz0f-A9PA8c6iFSA&ehbc=2E312F&noprof=1" width="100%" height="480"></iframe>
 
 We visited the following museums:
+
 * Natural History Museum of Basel
 * Natural History Museum of Bern
 * Natural History Museum of Lausanne
@@ -48,14 +49,14 @@ Overall, this trip was a valuable learning experience. It gave me a deeper appre
 
 ## **Beyond the Science, There Were Some Lighter Moments as Well.**
 
-*  Learning about the different ways museums organize their collections. Some museums group specimens by type (minerals, fossils, rocks), while others organize them by geographical location. The lines are drawn very differently depending on historical practices and the types of collections housed.
-*  Discovering the fascinating stories behind some of the specimens. Mineral type specimens are carefully classified and named by mineralogists, and the story of how a mineral was first discovered or named can be just as interesting as the mineral itself. Because there are just over 6,000 recognized minerals[^2], it's not uncommon for a type specimen to have a very interesting story, and a significant portion of the world's type minerals were in these collections.
+* Learning about the different ways museums organize their collections. Some museums group specimens by type (minerals, fossils, rocks), while others organize them by geographical location. The lines are drawn very differently depending on historical practices and the types of collections housed.
+* Discovering the fascinating stories behind some of the specimens. Mineral type specimens are carefully classified and named by mineralogists, and the story of how a mineral was first discovered or named can be just as interesting as the mineral itself. Because there are just over 6,000 recognized minerals[^2], it's not uncommon for a type specimen to have a very interesting story, and a significant portion of the world's type minerals were in these collections.
 
 This trip was a reminder of the power of natural history and geoscience collections to spark curiosity and inspire wonder. I'm grateful for the opportunity to have been a part of it, and I look forward to seeing how Specify continues to evolve and meet the needs of research collections and museums in the future.
 
 ## Photos
 
-*A historic street in Geneva.* 
+*A historic street in Geneva.*
 
 ![Geneva Street](geneva_street.jpeg)
 
