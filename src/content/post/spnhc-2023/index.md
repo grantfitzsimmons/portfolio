@@ -14,7 +14,7 @@ I had the opportunity to travel to San Francisco, California, last May to attend
 
 Discussions and talks covered topics ranging from specimen management and preservation techniques to the integration of technology in specimen management and research. These meetings often foster collaboration between museum curators, conservationists, and educators. The conference emphasizes the importance of monitoring biodiversity, including presentations on changes and discoveries in our ecosystems, and addresses the urgent need for preservation amid climate change and habitat loss.
 
-![Session rooms](session_room.jpeg)
+<!-- ![Session rooms](session_room.jpeg) -->
 
 For our team, the SPNHC conference provides an invaluable opportunity for networking, allowing us to forge connections with prospective and current Specify users that can lead to future collaborations and data conversions. The workshops and presentations not only inspire new ideas but also equip attendees with practical knowledge that can be applied at their own institutions.
 
