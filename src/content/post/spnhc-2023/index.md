@@ -1,13 +1,13 @@
 ---
 title: "SPNHC 2023 in San Francisco, California"
 description: "My first year at SPNHC at the California Academy of Sciences."
-publishDate: "4 June 2023"
-updatedDate: "23 December 2024"
+publishDate: "5 January 2025"
+updatedDate: "5 January 2025"
 coverImage:
   src: "./cover.jpeg"
   alt: "SPNHC 2023"
 tags: ["specify", "travel"]
-draft: true
+draft: false
 ---
 
 In late May 2023, I had the opportunity to travel to San Francisco, California, last May to attend my first SPNHC[^1] (often pronounced "spinach") conference. This meeting is exceptionally important for people in the biodiversity field, as it serves as a vital platform for software providers (such as the Specify group), researchers, and institutions to share their latest findings, innovations, and best practices in natural history collections and biodiversity conservation. For the work we do at Specify, this conference provides an invaluable opportunity for networking, giving us a platform to present our software, new developments, and create new relationships with prospective users and to reiterate our commitment to listening to our community for existing users. The workshops and presentations not only inspire new ideas but also equip attendees with practical knowledge that can be applied at their own institutions.
@@ -70,8 +70,6 @@ It was also great to see the sea lions lounging on the docks at the pier. I coul
 
 ![Claude and me](Claude.jpeg)
 ![Claude](ClaudeSolo.jpeg)
-
-## Miscellaneous Photos
 
 *Francisco Street.*
 
