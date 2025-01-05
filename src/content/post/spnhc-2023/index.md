@@ -26,8 +26,7 @@ In collaboration with iDigBio, GBIF, TaxonWorks, and Symbiota, we ran the "Data 
 
 ![Data Help Desk](SPNHCBooth.jpeg)
 
-*Some of the great people I spent time with at this booth.*
-*From left to right: [Vijay Barve](https://orcid.org/0000-0002-4852-2567), [Laura Russel](https://orcid.org/0000-0002-1920-5298), Me, [Theresa Miller](https://biodiversity.ku.edu/people/theresa-miller)*
+*Some of the great people I spent time with at this booth.*<br/>*From left to right: [Vijay Barve](https://orcid.org/0000-0002-4852-2567), [Laura Russel](https://orcid.org/0000-0002-1920-5298), Me, [Theresa Miller](https://biodiversity.ku.edu/people/theresa-miller)*
 
 ![Data Help Desk Colleagues](Friends.jpeg)
 
