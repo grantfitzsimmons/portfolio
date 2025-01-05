@@ -7,7 +7,7 @@ tags: ["specify", "geoscience"]
 draft: true
 ---
 
-As the point of contact for the Specify team in the GeoSpecify initiative, I’ve had the unique opportunity to engage with a vibrant community of geologists, curators, and researchers from around the world. This experience has been both enlightening and rewarding, allowing me to contribute to a project that aims to enhance the management of geological collections.
+As the point of contact for the Specify team in the GeoSpecify initiative, I’ve had the unique opportunity to engage with a vibrant community of geologists, curators, and researchers from around the world. This experience has been enlightening, challenging, and rewarding, allowing me to play a major role in a project aiming to extend the existing Specify platform to support geoscience collections.
 
 ## Project Overview
 
