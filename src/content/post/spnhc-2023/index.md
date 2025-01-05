@@ -20,7 +20,16 @@ Discussions and talks covered topics ranging from specimen management and preser
 
 ![Grand Ballroom](Ballroom.jpeg)
 
-<!-- This year, SPNHC held a joint conference with TDWG[^2], known as [SPNHC-TDWG 2024](https://spnhc.org/events/event/spnhc-tdwg-2024/), which took place at the Okinawa Convention Centre in Okinawa, Japan, from September 2 to 6. While it was a grueling flight, it was my first time traveling internationally for a conference and it was a great experience. -->
+In collaboration with iDigBio, GBIF, TaxonWorks, and Symbiota, we ran the "Data Help Desk", which was a staffed table where attendees could ask questions about data standards, data sharing, and data management across various systems. This was a great opportunity to engage with the community and provide support to those who needed it, and it was the first time I had a chance to meet with representatives from these other organizations and learn more about their work.
+
+*The Data Help Desk.*
+
+![Data Help Desk](SPNHCBooth.jpeg)
+
+*Some of the great people I spent time with at this booth.*
+*From left to right: [Vijay Barve](https://orcid.org/0000-0002-4852-2567), [Laura Russel](https://orcid.org/0000-0002-1920-5298), Me, [Theresa Miller](https://biodiversity.ku.edu/people/theresa-miller)*
+
+![Data Help Desk Colleagues](Friends.jpeg)
 
 ## My Session
 
