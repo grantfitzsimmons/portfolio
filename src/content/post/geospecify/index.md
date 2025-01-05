@@ -75,23 +75,10 @@ We discussed a wide range of topics, including:
 
 To ensure we stay aligned with the needs of our users, we established the GeoSpecify Advisory Committee, comprising 40 experts from over 30 collections. This committee has been a vital resource, providing guidance and feedback throughout our journey.
 
-### Key Topics Discussed
-
-- **Introduction to GeoSpecify**
-- **Unique Identifiers**
-- **Geologic Age**
-- **Using GeoSpecify**
-
-These discussions have been enlightening, offering diverse perspectives that have shaped our project's direction.
-
 ## Insights on the Extended Data Model
 
-One of the highlights of my involvement has been the development of an extended data model that supports enhanced age queries. This feature is crucial for geologists, allowing them to search for specimens based on relative and absolute ages. 
+One of the highlights of my involvement has been the development of an extended data model that supports enhanced age queries. This feature is crucial for geologists, allowing them to search for specimens based on relative and absolute ages.
 
-### Why Extended Age Queries Matter
-
-The ability to query geological time periods using chronostrat names or numbers across various contexts significantly enhances usability. I’ve seen how this functionality can streamline searches and enrich the data available for geological research, making it easier for researchers to find relevant specimens.
-
-In conclusion, my experience with the GeoSpecify initiative has been transformative. I’ve gained a deeper appreciation for the complexities of managing geological collections and the importance of collaboration in advancing our understanding of the geosciences. As we move towards our production release, I am excited about the impact this project will have on the community and look forward to continuing this journey.
+---
 
 For more detailed insights, check out our publication, **Extending Specify 7 for Geoscience Collections**, which outlines our efforts in depth and can be accessed [here](https://doi.org/10.3897/biss.8.141673).
