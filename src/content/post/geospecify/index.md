@@ -23,7 +23,7 @@ However, as I became more intimately involved with the project, I realized that 
 
 We had a relatively short timeline to complete the project, with the following key milestones:
 
-**Duration:** January 2023 - Q1 2025
+-*Duration:** January 2023 - Q1 2025
 
 ### Phases of the Project
 
@@ -79,6 +79,17 @@ We discussed a wide range of topics, including:
 
 To ensure we stay aligned with the needs of our users, we established the GeoSpecify Advisory Committee, comprising 40 experts from over 30 collections. This committee has been a vital resource, providing guidance and feedback throughout our journey.
 
+### **GeoSpecify Advisory Committee**
+
+- 5 April 2023 (**Introduction**)
+- 26 July 2023 (**Unique Identifiers**)
+- 28 September 2023 (**Containers**)
+- 14 November 2023 (**Geologic Age**)
+- 7 February 2024 (**Multiple Object Types**)
+- 31 July 2024 (**Catalog Numbering**)
+- 2 September 2024 (**Defaults**)
+- 3 October 2024 (**Presented Defaults**)
+
 ## Insights on the Extended Data Model
 
 One of the highlights of my involvement has been the development of an extended data model that supports enhanced age queries. This feature is crucial for geologists, allowing them to search for specimens based on relative and absolute ages.
@@ -95,5 +106,3 @@ I’ve also been involved in writing documentation for the GeoSpecify project, i
 - [Adding a New Taxon Tree to the Same Collection](https://discourse.specifysoftware.org/t/adding-a-new-taxon-tree-within-the-same-collection/2229/1)
 
 ---
-
-
