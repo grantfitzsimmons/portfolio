@@ -42,14 +42,34 @@ Throughout 2023 and early 2024, I connected with a diverse range of scientists a
 - Mindat.org
 - The University of Kansas
 - Denver Museum of Nature and Science
-- South Dakota School of Mines
-- University of Texas at Austin
+- Museum of Geology at South Dakota School of Mines
+- Jackson Museum of Earth History at University of Texas at Austin
 - California Academy of Sciences
+- Colorado School of Mines
+- CSIRO Australia
 - Natural History Museum Bern
+- Natural History Museum Basel
+- Natural History Museum Lausanne
 - Smithsonian Institution
+- Natural History Museum Geneva
+- Scripps Institution of Oceanography
 - ...and many others.
 
-These meetings not only broadened my understanding of geological collections but also fostered a sense of community among professionals dedicated to advancing this field.
+We discussed a wide range of topics, including:
+
+- **Unique Identifiers**: The use of unique identifiers such as SESAR and IGSN numbers for registering and ordering specimens was a common theme.
+
+- **Collection Management Practices**: Various institutions explored their management practices, including the importance of structured measurement data, cataloging, and the use of specific software tools like EMu, Specify, and FileMaker Pro.
+
+- **Data Fields and Specifications**: Discussions included the types of data fields important for geology collections, such as dimensions, chemical information, rock types, and collector information.
+
+- **Research and Specimen Handling**: Institutions shared their approaches to researching and handling geological specimens, including cores, minerals, and meteorites.
+
+- **Collaboration and Integration**: Potential collaborations on data management, including the use of APIs and integration of systems like Mindat.org with Specify.
+
+- **Digitization and Data Management**: The digitization process and management of various material types within collections were significant points of discussion, along with improving coordination and protocols for data management.
+
+- **Demonstrations and Software Usage**: Some institutions provided demonstrations of their databases and discussed their workflows for managing geological data. This helped us understand the current landscape and identify areas for improvement.
 
 ## The GeoSpecify Advisory Committee
 
