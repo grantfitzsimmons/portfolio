@@ -94,6 +94,12 @@ To ensure we stay aligned with the needs of our users, we established the GeoSpe
 
 One of the highlights of my involvement has been the development of an extended data model that supports enhanced age queries. This feature is crucial for geologists, allowing them to search for specimens based on relative and absolute ages.
 
+### Presentation at the European Mineralogical Conference 2024
+(23 August 2024, Dublin, Ireland – Virtual)
+
+<embed src="/multimedia/Fitzsimmons_EMC2024_Session35-36.pdf" width="100%" height="500" />
+
+
 ## Writing Documentation
 
 I’ve also been involved in writing documentation for the GeoSpecify project, including user guides, technical specifications, and training materials. It is critical that we make it as easy as possible for users to adopt the new platform, and clear documentation is key to achieving this. I have been the primary author of all user and technical documentation for Specify for over three years, so this was a natural extension of my role. It helped significantly to be involved at the level I have been during all phases of the project.
