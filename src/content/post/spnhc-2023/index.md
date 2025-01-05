@@ -54,6 +54,10 @@ I also had the chance to visit the surrounding Golden Gate Park, which in additi
 
 I had the wonderful opportunity to explore San Francisco and the surrounding area. The city is known for its iconic landmarks, including the Golden Gate Bridge, Alcatraz Island, and Fisherman's Wharf– all of which I had the chance to observe during my time there. The city's diverse neighborhoods, from the historic Mission District to Haight-Ashbury, offer a glimpse into the city's rich culture and vibrant arts scene. I also loved the city's culinary scene, which I had the chance to explore on Pier 39 and in the Mission District.
 
+*The iconic golden gate bridge.*
+
+![Golden Gate Bridge](GoldenGateBridge.jpeg)
+
 We dined at Crab House at Pier 39, a fantastic seafood restaurant with a view of the bay. I had the opportunity to try the crab and shrimp pasta, which was excellent, especially since I usually don't have access to such fresh seafood in Kansas. The food was delicious, and the atmosphere was lively and fun. We also had the chance to try some local favorites, including fresh seafood from the Fisherman's Wharf area.
 
 ![Crab and Shrimp Pasta](SeafoodPasta.jpeg)
@@ -62,16 +66,27 @@ It was also great to see the sea lions lounging on the docks at the pier. I coul
 
 ![Sea Lions at Pier 39](SeaLions.jpeg)
 
-*The iconic golden gate bridge.*
+*Claude[^3], the albino alligator, basking and swimming at the California Academy of Sciences. One of only a couple albino alligators in the entire world*
 
-![Golden Gate Bridge](GoldenGateBridge.jpeg)
+![Claude and me](Claude.jpeg)
+![Claude](ClaudeSolo.jpeg)
 
 ## Miscellaneous Photos
+
+*Francisco Street.*
+
+![Francisco Street](CaliforniaPoppy.jpeg)
 
 *Beautiful California poppy (Eschscholzia californica)[^2] at the California Academy of Sciences.*
 
 ![Eschscholzia californica](CaliforniaPoppy.jpeg)
 
+*A beautiful dinosaur skeleton displayed at the reception area of Cal Academy.*
+
+![Reception T-rex](Reception.jpeg)
+
 [^1]: The Society for the Preservation of Natural History Collections (SPNHC) is an international organization devoted to the preservation, conservation, and management of natural history collections.
 
 [^2]: [See this occurrence on my iNaturalist (Jun 2, 2023 · 10:40 AM)](https://www.inaturalist.org/observations/257487259).
+
+[^3]: Claude is an albino American alligator, born in 1995, who has lived at the California Academy of Sciences since 2008. He is one of the most popular attractions at the museum and you can [learn more about him here](https://www.calacademy.org/exhibits/the-swamp).
