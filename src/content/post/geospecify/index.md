@@ -9,7 +9,11 @@ draft: true
 
 As the point of contact for the Specify team in the GeoSpecify initiative, I’ve had the unique opportunity to engage with a vibrant community of geologists, curators, and researchers from around the world. This experience has been enlightening, challenging, and rewarding, allowing me to play a major role in a project aiming to extend the existing Specify platform to support geoscience collections.
 
-In early 2023 I was asked by the then director of the Specify Collections Consoritum, Jim Beach, to play a role in the GeoSpecify initiative as a lead for the KU side of the project. I very excited for the opportunity, but equal parts intimidated to play such an important part in this kind of groundbreaking effort. I understood that the success of this project would not only impact my daily obligations but also countless individuals and organizations relying on the data model and application we develop. It felt like a massive weight was on my shoulders, but I could not have been more excited.
+For more detailed insights, check out our publication, **Extending Specify 7 for Geoscience Collections**, which outlines our efforts in depth and can be accessed [here](https://doi.org/10.3897/biss.8.141673).
+
+## Invitation to Join
+
+In early 2023, Jim Beach, the then director of the Specify Collections Consortium, asked me to lead the KU side of the GeoSpecify initiative. I was very excited about the opportunity, but I also felt intimidated by the responsibility of being part of such a groundbreaking effort. I understood that the success of this project would impact not only my daily obligations but also countless individuals and organizations relying on the data model and application we develop. It felt like a massive weight was on my shoulders, but my excitement remained high.
 
 At that time, I was still a student navigating my final year of undergraduate studies in Business Administration. The idea of leading such a significant project made me question my abilities. I often wondered if I was truly qualified to contribute meaningfully to an initiative of this scale. The stakes were high, and the responsibility felt immense. I understood that my decisions could influence the project's direction and, ultimately, the success of our entire consortium. Balancing my academic commitments with the demands of this role was daunting, leaving me with a mix of excitement and anxiety. Fortunately, I had a supportive team and mentors who believed in my potential and encouraged me to embrace this opportunity.
 
@@ -92,4 +96,4 @@ I’ve also been involved in writing documentation for the GeoSpecify project, i
 
 ---
 
-For more detailed insights, check out our publication, **Extending Specify 7 for Geoscience Collections**, which outlines our efforts in depth and can be accessed [here](https://doi.org/10.3897/biss.8.141673).
+
