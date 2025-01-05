@@ -75,7 +75,7 @@ It was also great to see the sea lions lounging on the docks at the pier. I coul
 
 *Francisco Street.*
 
-![Francisco Street](CaliforniaPoppy.jpeg)
+![Francisco Street](Francisco.jpeg)
 
 *Beautiful California poppy (Eschscholzia californica)[^2] at the California Academy of Sciences.*
 
