@@ -79,6 +79,17 @@ To ensure we stay aligned with the needs of our users, we established the GeoSpe
 
 One of the highlights of my involvement has been the development of an extended data model that supports enhanced age queries. This feature is crucial for geologists, allowing them to search for specimens based on relative and absolute ages.
 
+## Writing Documentation
+
+I’ve also been involved in writing documentation for the GeoSpecify project, including user guides, technical specifications, and training materials. It is critical that we make it as easy as possible for users to adopt the new platform, and clear documentation is key to achieving this. I have been the primary author of all user and technical documentation for Specify for over three years, so this was a natural extension of my role. It helped significantly to be involved at the level I have been during all phases of the project.
+
+- [Specify 7.10 Release Announcement](https://discourse.specifysoftware.org/t/specify-7-10-0-release-announcement/2196/1) – First release containing the initial version of GeoSpecify
+- [Collection Object Types](https://discourse.specifysoftware.org/t/collection-object-types/2227/1)
+- [Collection Object Groups](https://discourse.specifysoftware.org/t/collection-object-groups/2226/1)
+- [Extended Age Queries](https://discourse.specifysoftware.org/t/extended-age-queries/2233/1)
+- [Paleo Context / Geologic Context](https://discourse.specifysoftware.org/t/paleo-context-geologic-context/2228/1)
+- [Adding a New Taxon Tree to the Same Collection](https://discourse.specifysoftware.org/t/adding-a-new-taxon-tree-within-the-same-collection/2229/1)
+
 ---
 
 For more detailed insights, check out our publication, **Extending Specify 7 for Geoscience Collections**, which outlines our efforts in depth and can be accessed [here](https://doi.org/10.3897/biss.8.141673).
