@@ -50,6 +50,8 @@ Throughout the sessions, I encouraged open dialogue, and the Q&A segments were a
 
 ![CFS Proposed Organizations](ForestryOrg.png)
 
+<embed src="/multimedia/CFSHierarchies.pdf" width="100%" height="500"/>
+
 ### Herbarium Displays
 
 One of the highlights was seeing the beautiful herbarium sheets mounted for display at the forestry center.
