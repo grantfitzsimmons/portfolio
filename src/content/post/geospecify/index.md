@@ -1,10 +1,10 @@
 ---
 title: "My Journey with GeoSpecify: A Personal Reflection"
 description: "Insights and experiences from my role in the GeoSpecify initiative."
-publishDate: "12 January 2024"
-updatedDate: "12 January 2024"
+publishDate: "12 January 2025"
+updatedDate: "12 January 2025"
 tags: ["specify", "geoscience"]
-draft: true
+draft: false
 ---
 
 As the point of contact for the Specify team in the GeoSpecify initiative, I’ve had the unique opportunity to engage with a vibrant community of geologists, curators, and researchers from around the world. This experience has been enlightening, challenging, and rewarding, allowing me to play a major role in a project aiming to extend the existing Specify platform to support geoscience collections.
@@ -31,7 +31,7 @@ We had a relatively short timeline to complete the project, with the following k
 
 The first phase involved gathering use cases, information models, and best practices. [Ben Norton](https://orcid.org/0000-0002-5819-9134), with his extensive experience in Specify and data science, led this effort. He did a fantastic job collecting and evaluating data models from various institutions, helping us navigate the complexities of geological collections. Regular meetings with him and our team provided the clarity and direction we needed to move forward.
 
-I had the privilege of conducting interviews with geological curators and researchers, which provided invaluable insights into the challenges and needs of the community. This foundational work was crucial in shaping our approach.
+I had the privilege of conducting interviews with geological curators and researchers, which provided invaluable insights into the challenges and needs of the community. This foundational work was crucial in shaping our approach since we had never before consulted with so many collections experts in this domain.
 
 #### Phase 2 (In Progress)
 
@@ -109,3 +109,11 @@ I’ve also been involved in writing documentation for the GeoSpecify project, i
 - [Extended Age Queries](https://discourse.specifysoftware.org/t/extended-age-queries/2233/1)
 - [Paleo Context / Geologic Context](https://discourse.specifysoftware.org/t/paleo-context-geologic-context/2228/1)
 - [Adding a New Taxon Tree to the Same Collection](https://discourse.specifysoftware.org/t/adding-a-new-taxon-tree-within-the-same-collection/2229/1)
+
+## Current Status of GeoSpecify
+
+As we enter the final stretch of usability testing for the GeoSpecify initiative, I’m excited about the progress we’ve made as a team and the contributions I've had the opportunity to make individually. I’ve been actively involved in this project since the collaboration began, gathering requirements, working with experts, and making several code additions to enhance the platform's usability.
+
+I compiled default taxonomic trees for minerals, rocks, and meteorites from their respective source authorities, as well as a chronostratigraphy tree in collaboration with the International Union of Geological Sciences (IUGS). I also outlined the requirements for the major components of this project, met with stakeholders to present our developing platform, and incorporated community feedback into our work. Throughout this process, I worked closely with our internal team in both development and testing to ensure that the platform meets the needs of geoscience collections worldwide.
+
+This collaborative effort is crucial as we refine the platform to effectively serve our users. I’m looking forward to seeing the positive impact of our work as we bring this project to a close. I expect to present many workshops and talks on the GeoSpecify initiative in the coming months for our existing members and prospective users, possibly culiminating in a second visit to our Swiss partners later this year to assist them in their transition to the new platform.
