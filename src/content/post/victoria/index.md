@@ -1,32 +1,28 @@
 ---
 title: "CFS Collections Workshop in Victoria, BC"
 description: "I had an amazing time working with collection managers from the Canadian Forest Service at a workshop in beautiful Victoria, British Columbia."
-publishDate: "1 Feb 2024"
-updatedDate: "1 Feb 2024"
-coverImage:
-  src: "./victoria_workshop.jpeg"
-  alt: "Photo of the workshop audience"
+publishDate: "12 Jan 2025"
+updatedDate: "12 Jan 2025"
+# coverImage:
+#   src: "./victoria_workshop.jpeg"
+#   alt: "Photo of the workshop audience"
 tags: ["specify", "travel"]
-draft: false
+draft: true
 ---
 
 Last week, I had the fantastic opportunity to connect with collection managers and staff from the Canadian Forest Service at the CFS Collections Workshop held at the Pacific Forestry Centre in the gorgeous city of Victoria, British Columbia.
 
-It was such a joy to meet many of the attendees for the first time and to finally put faces to names after years of virtual chats!
-
-*That’s me leading a session below—just in case you were wondering!*
-
-![Me speaking at the workshop](victoria_workshop_speaking.jpeg)
+It was such a joy to meet many of the attendees for the first time and to finally put faces to names after years of virtual emails.
 
 The workshop was organized by the Canadian Forest Service (CFS) and the Natural Resources Canada (NRCan) Scientific Collections Project team. Our goal was to dive into the implementation of Specify software as a national collection management tool for CFS collections. We had nearly 30 participants join us, both in person and online, representing all sorts of roles in managing scientific collections.
 
-# Pacific Forestry Centre
+## Pacific Forestry Centre
 
 > The Pacific Forestry Centre is a hub for forest research and development, dedicated to sustainable forest management. It’s a key facility for the Canadian Forest Service, contributing to the understanding and preservation of Canada’s diverse forest ecosystems.
 
-[You can learn more about the Pacific Forestry Centre here](https://www.nrcan.gc.ca/forests).
+[You can learn more about the Pacific Forestry Centre here](https://www.nrcan.gc.ca/forests) [^1].
 
-# Workshop Sessions
+## Workshop Sessions
 
 I was thrilled to lead two sessions on the first day of the workshop:
 
@@ -38,40 +34,43 @@ I was thrilled to lead two sessions on the first day of the workshop:
 
 After lunch, we had a breakout session where participants grouped by the type of collection they manage. This was a fantastic opportunity for everyone to discuss specific issues and share their best practices in a collaborative setting.
 
-![Workshop screen](victoria_workshop_screen.jpeg)
+## Slideshow
 
-# Slideshow
+To kick off the workshop, I presented a brief overview of the topics we would cover.
 
-To kick off the workshop, I presented a brief overview of the topics we would cover. A PDF of this session is available for reference below:
+<!-- A PDF of this session is available for reference below:
 
 <embed src="/victoria/CFS_Workshop_Overview.pdf" width="100%" height="500" />
 
-If you’re curious to learn more or have any questions, don’t hesitate to reach out to me at [my email](mailto:me@grantfitzsimmons.com)!
-
+If you’re curious to learn more or have any questions, don’t hesitate to reach out to me at [my email](mailto:me@grantfitzsimmons.com)! -->
 
 Throughout the sessions, I encouraged open dialogue, and the Q&A segments were a hit! It was so inspiring to see the enthusiasm from the participants as they engaged with the material and each other, sharing insights and experiences related to their unique collections.
 
-## Herbarium Displays
+## Organization Discussions
 
-One of the highlights was seeing the beautiful herbarium sheets mounted for display at the forestry center. 
+![CFS Proposed Organizations](ForestryOrg.png)
+
+### Herbarium Displays
+
+One of the highlights was seeing the beautiful herbarium sheets mounted for display at the forestry center.
 
 ![Herbarium Sheets](herbarium_sheets_display.jpeg)
 
-Additionally, I had the chance to check out their working collection for insects, which was impressive. I also learned about their work developing DNA libraries for Cerambycidae, which you can explore more about through the [GBIF taxonomy](https://www.gbif.org).
+Additionally, I had the chance to check out their working collection for insects, which was impressive. I also learned about their work developing DNA libraries for Cerambycidae, which you can explore more about through the [GBIF taxonomy](https://www.gbif.org/species/5602) [^2].
 
 ![Insect Collection](insect_collection.jpeg)
 
-# Networking and Community Building
+## Networking and Community Building
 
-One of the best parts of the workshop was the chance to network. After a productive day, we headed downtown to Swans Pub for dinner, where the conversations continued in a more relaxed atmosphere. It was a great way to foster connections and build a sense of community among collection managers and staff.
+One of the best parts of the workshop was the chance to network. After a productive day, we headed downtown to Swans Pub for dinner, where the conversations continued in a more relaxed atmosphere. It was a great way to foster connections and build a sense of community among collection managers and staff [^3].
 
 The feedback from attendees was overwhelmingly positive, with many expressing excitement about transitioning to Specify and relief at moving away from outdated systems. It’s clear that everyone is eager to embrace the efficiencies that Specify offers!
 
-# Conclusion
+## Conclusion
 
 I’m incredibly grateful for the warm welcome from the CFS team and the chance to contribute to enhancing collection management practices in Canada. The dedication of the participants to improving their data management capabilities is truly commendable, and I can’t wait to see how Specify empowers their work moving forward.
 
-## Miscellaneous
+### Miscellaneous
 
 ![Beautiful view from the airplane](airplane_view_mountains.jpeg)
 
@@ -85,7 +84,8 @@ While there, I saw a ton of boats docked in the harbor.
 
 ![Boats in the harbor](boats_harbor.jpeg)
 
-Before my flight to Seattle, I had the chance to try Tim Hortons and got a hot chocolate!
+Before my flight to Seattle, I had the chance to try Tim Hortons and got a hot chocolate! [^4]
+
 
 I had a long layover in Seattle and took their public transit out to Pike Place Market, where I saw the first Starbucks and the famous Gum Wall. So many neat shops and friendly people!
 
@@ -95,7 +95,12 @@ I had a long layover in Seattle and took their public transit out to Pike Place 
 
 I also stopped by to see the Space Needle before hurrying back to the airport.
 
-![Space Needle](space_needle_1.jpeg)  
-![Space Needle Architecture](space_needle_2.jpeg)  
+![Space Needle](space_needle_1.jpeg)
+![Space Needle Architecture](space_needle_2.jpeg)
 
 A huge thank you to everyone who participated in the workshop and helped make it a success. It’s an honor to assist collection staff in managing their data more effectively and supporting biodiversity research across Canada.
+
+[^1]: Canadian Forest Service. [Pacific Forestry Centre](https://www.nrcan.gc.ca/forests): A key facility for forest research and sustainable management in Canada.
+[^2]: GBIF. [Cerambycidae Taxonomy](https://www.gbif.org/species/5602): It has a comprehensive database covering the taxonomy of longhorn beetles.
+[^3]: Swans Pub. [Swans Pub](https://swansbrewery.com/pub/): A popular and delicious pub in Victoria.
+[^4]: Tim Hortons. [Tim Hortons](https://www.timhortons.com): A Canadian coffee and fast-food chain famous for its coffee and donuts.
