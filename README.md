@@ -1,4 +1,11 @@
 # Grant Fitzsimmons Portfolio
 
 Based on [Astro Resume](https://github.com/srleom/astro-theme-resume)
-Available on Port 4321
+
+To start the server:
+
+```zsh
+npm run dev
+```
+
+You can see it in your browser at `http://localhost:4321/`!
