@@ -22,4 +22,4 @@ You can read more about my first visit to the [SPNHC conference](https://www.gra
 
 <!-- References -->
 
-[^1]: A [Lamington Cake](https://www.196flavors.com/australia-lamington/) is an Australian dessert made of sponge cake coated in chocolate and then covered in coconut.
+[^1]: [CityPASS](https://www.citypass.com/san-francisco) is a pass that allows you to visit multiple attractions in a city at a discounted price. It is available in several cities, including San Francisco, and can be purchased online or at participating attractions. The pass typically includes admission to popular attractions such as museums, aquariums, and other cultural sites, and can save you money compared to buying individual tickets.
