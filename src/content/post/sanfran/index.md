@@ -10,15 +10,7 @@ tags: ["travel"]
 draft: true
 ---
 
-I have been to San Francisco a few times now, and I thought it would be nice to reflect on my experiences there. Each had a transformative impact on my career and personal life.
-
-## 2025
-
-## 2023
-
-You can read more about my first visit to the [SPNHC conference](https://www.grantfitzsimmons.com/blog/spnhc-2023/) [^1].
-
-## 2019
+My first trip was in 2019, and I returned in 2023 and 2025. Each visit has been unique, shaped by the people I met and the experiences I had.
 
 <!-- References -->
 
