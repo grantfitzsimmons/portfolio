@@ -7,22 +7,33 @@ content:
     label: Posts
     type: collection
     path: src/content/post
+    filename: "{year}-{month}-{day}-{primary}/index.mdx"
     view:
       fields: [title, draft, publishDate]
+      layout: tree
+      node:
+        filename: index.mdx
     fields:
       - name: title
         label: Title
         type: string
         required: true
+        pattern:
+          regex: '^.{1,60}$'
+          message: 'Title must be at most 60 characters.'
       - name: description
         label: Description
         type: string
         required: true
         multiline: true
         hint: 50–160 characters recommended
+        pattern:
+          regex: '^[\s\S]{50,160}$'
+          message: 'Description must be between 50 and 160 characters.'
       - name: publishDate
         label: Publish date
         type: date
+        required: true
       - name: updatedDate
         label: Updated date
         type: date
@@ -41,9 +52,11 @@ content:
           - name: alt
             label: Alt text
             type: string
+            required: true
       - name: draft
         label: Draft
         type: boolean
+        default: false
       - name: tags
         label: Tags
         type: string
@@ -56,5 +69,5 @@ content:
         label: Body
         type: rich-text
         options:
-          input: public/images/uploads
-          output: /images/uploads
+          input: src/content/post
+          output: .
