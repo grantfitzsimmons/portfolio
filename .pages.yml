@@ -1,0 +1,60 @@
+media:
+  input: public
+  output: /
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/post
+    view:
+      fields: [title, draft, publishDate]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: string
+        required: true
+        multiline: true
+        hint: 50–160 characters recommended
+      - name: publishDate
+        label: Publish date
+        type: date
+      - name: updatedDate
+        label: Updated date
+        type: date
+        required: false
+      - name: coverImage
+        label: Cover image
+        type: object
+        required: false
+        fields:
+          - name: src
+            label: Image
+            type: image
+            options:
+              input: src/content/post
+              output: .
+          - name: alt
+            label: Alt text
+            type: string
+      - name: draft
+        label: Draft
+        type: boolean
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: ogImage
+        label: Open Graph Image (URL or public path)
+        type: string
+        required: false
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          input: public/images/uploads
+          output: /images/uploads
