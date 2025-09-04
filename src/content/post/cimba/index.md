@@ -1,8 +1,8 @@
 ---
 title: "First Five Days in Italy"
 description: "Some thoughts and lessons learned during my first five days in Ital0y"
-publishDate: "27 May 2022"
-updatedDate: "27 May 2022"
+publishDate: 2022-05-27
+updatedDate: 2022-05-27
 coverImage:
   src: "./fiume_brenta.jpeg"
   alt: "Fiume Brenta"

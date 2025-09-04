@@ -1,8 +1,8 @@
 ---
 title: "Reflecting on Fitzsimmons Weekly"
 description: "When I was 14 years old, I started writing for a blog known as 'Fitzsimmons Weekly'. After half a decade of activity, I stepped away. Here are my thoughts."
-publishDate: "19 September 2024"
-updatedDate: "19 September 2024"
+publishDate: 2024-09-19
+updatedDate: 2024-09-19
 coverImage:
   src: "./cover.png"
   alt: "Meeting with the Natural History Museum Geneva collections team"

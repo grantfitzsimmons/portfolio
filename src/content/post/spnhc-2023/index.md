@@ -1,8 +1,8 @@
 ---
 title: "SPNHC 2023 in San Francisco, California"
 description: "My first year at SPNHC at the California Academy of Sciences."
-publishDate: "5 January 2025"
-updatedDate: "5 January 2025"
+publishDate: 2025-01-05
+updatedDate: 2025-01-05
 coverImage:
   src: "./cover.jpeg"
   alt: "SPNHC 2023"

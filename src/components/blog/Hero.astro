@@ -11,6 +11,17 @@ const {
 	content: { data, render }
 } = Astro.props
 
+// Type guard to narrow the union from the content schema (string | ImageData)
+// so TypeScript knows when it's safe to pass to the astro:assets <Image /> component.
+function isImageData(value: unknown): value is { src: string; width?: number; height?: number } {
+	// astro:assets image objects are plain objects with a `src` property (string)
+	// and may include width/height/format. We check for an object with a string `src`.
+	return typeof value === 'object' && value !== null && 'src' in value && typeof (value as any).src === 'string'
+}
+
+// Local alias to help TypeScript/JSDOM narrowing in the template
+const cover = data.coverImage
+
 const { remarkPluginFrontmatter } = await render()
 
 const dateTimeOptions: Intl.DateTimeFormatOptions = {
@@ -18,19 +29,35 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 }
 ---
 
-{
-	data.coverImage && (
-		<div class='aspect-h-9 aspect-w-16 mb-6'>
-			<Image
-				alt={data.coverImage.alt}
+{cover && (
+	<div class='aspect-h-9 aspect-w-16 mb-6'>
+		{typeof cover.src === 'string' ? (
+			<img
+				alt={cover.alt}
 				class='rounded-2xl object-cover'
 				fetchpriority='high'
 				loading='eager'
-				src={data.coverImage.src}
+				src={cover.src}
 			/>
-		</div>
-	)
-}
+		) : isImageData(cover.src) ? (
+			<Image
+				alt={cover.alt}
+				class='rounded-2xl object-cover'
+				fetchpriority='high'
+				loading='eager'
+				src={cover.src}
+			/>
+		) : (
+			<img
+				alt={cover.alt}
+				class='rounded-2xl object-cover'
+				fetchpriority='high'
+				loading='eager'
+				src={String((cover as any).src ?? '')}
+			/>
+		)}
+	</div>
+)}
 {data.draft ? <span class='text-red-500'>(Draft)</span> : null}
 <div class='flex flex-wrap items-center gap-x-3 gap-y-2'>
 	<p class='text-xs'>

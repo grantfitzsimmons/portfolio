@@ -14,16 +14,17 @@ const post = defineCollection({
 			title: z.string().max(60),
 			description: z.string().min(50).max(160),
 			publishDate: z
-				.string()
-				.or(z.date())
-				.transform((val) => new Date(val)),
+				.union([z.string().regex(/^\d{4}-\d{2}-\d{2}$/), z.date()])
+				.transform((val) => (val instanceof Date ? val : new Date(val))),
 			updatedDate: z
-				.string()
+				.union([z.string().regex(/^\d{4}-\d{2}-\d{2}$/), z.date()])
 				.optional()
-				.transform((str) => (str ? new Date(str) : undefined)),
+				.transform((val) => (val ? (val instanceof Date ? val : new Date(val)) : undefined)),
 			coverImage: z
 				.object({
-					src: image(),
+					// Allow either a local content asset (optimized via astro:assets)
+					// or a public path string like "/images/cover.jpg"
+					src: z.union([image(), z.string().regex(/^\//)]),
 					alt: z.string()
 				})
 				.optional(),

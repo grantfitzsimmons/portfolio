@@ -1,8 +1,8 @@
 ---
 title: "Reflecting on San Francisco"
 description: "Reflecting on my first trips to San Francisco in 2019, 2023, and 2025."
-publishDate: "4 May 2025"
-updatedDate: "4 May 2025"
+publishDate: 2025-05-04
+updatedDate: 2025-05-04
 # coverImage:
 #   src: "./workshop_crowd.jpeg"
 #   alt: "Photo of the workshop audience"

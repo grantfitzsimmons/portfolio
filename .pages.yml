@@ -34,21 +34,31 @@ content:
         label: Publish date
         type: date
         required: true
+        pattern:
+          regex: '^\\d{4}-\\d{2}-\\d{2}$'
+          message: 'Use YYYY-MM-DD (e.g., 2025-08-31).'
+        hint: 'Format: YYYY-MM-DD'
       - name: updatedDate
         label: Updated date
         type: date
         required: false
+        pattern:
+          regex: '^\\d{4}-\\d{2}-\\d{2}$'
+          message: 'Use YYYY-MM-DD (e.g., 2025-08-31).'
+        hint: 'Format: YYYY-MM-DD'
       - name: coverImage
         label: Cover image
         type: object
         required: false
         fields:
           - name: src
-            label: Image
+            label: Image (local or public)
             type: image
+            # Default to colocating next to the post
             options:
               input: src/content/post
               output: .
+            hint: 'Prefer local (./cover.jpg). For public image, switch picker path to public/images and choose a /images/... path.'
           - name: alt
             label: Alt text
             type: string
@@ -69,5 +79,7 @@ content:
         label: Body
         type: rich-text
         options:
+          # Default colocated uploads
           input: src/content/post
           output: .
+          # Tip: To use public assets, change folder to public/images in the picker and the editor will insert /images/... paths.

@@ -1,8 +1,8 @@
 ---
 title: "Specify Workshop in Perth, WA"
 description: "I had the amazing opportunity to work with current and prospective Specify users from around Australia at a workshop in the Western Australian Herbarium"
-publishDate: "20 Sep 2024"
-updatedDate: "20 Sep 2024"
+publishDate: 2024-09-20
+updatedDate: 2024-09-20
 coverImage:
   src: "./workshop_crowd.jpeg"
   alt: "Photo of the workshop audience"

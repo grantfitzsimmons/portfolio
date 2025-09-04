@@ -1,8 +1,8 @@
 ---
 title: "SPNHC-TDWG 2024 in Okinawa, Japan"
 description: "My second year at the SPNHC conference and first at TDWG, this time in Japan!"
-publishDate: "21 September 2024"
-updatedDate: "21 September 2024"
+publishDate: 2024-09-21
+updatedDate: 2024-09-21
 coverImage:
   src: "./cover.jpeg"
   alt: "SPNHC-TDWG 2024"

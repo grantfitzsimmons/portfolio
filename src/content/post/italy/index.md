@@ -1,8 +1,8 @@
 ---
 title: "Paderno del Grappa, Italy"
 description: "A particularly beautiful afternoon in Paderno, Italy"
-publishDate: "6 June 2022"
-updatedDate: "6 June 2022"
+publishDate: 2022-06-06
+updatedDate: 2022-06-06
 coverImage:
   src: "./cover.png"
   alt: "CIMBA"

@@ -1,8 +1,8 @@
 ---
 title: "Collections Workshop in Victoria, BC"
 description: "I had an amazing time working with collection managers from the Canadian Forest Service at a workshop in beautiful Victoria, British Columbia."
-publishDate: "12 Apr 2025"
-updatedDate: "12 Apr 2025"
+publishDate: 2025-04-12
+updatedDate: 2025-04-12
 coverImage:
   src: "./boats_harbor.jpeg"
   alt: "Harbor 

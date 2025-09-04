@@ -1,8 +1,8 @@
 ---
 title: "My Journey with GeoSpecify: A Personal Reflection"
 description: "Insights and experiences from my role in the GeoSpecify initiative."
-publishDate: "12 January 2025"
-updatedDate: "12 January 2025"
+publishDate: 2025-01-12
+updatedDate: 2025-01-12
 tags: ["specify", "geoscience"]
 draft: true
 ---
