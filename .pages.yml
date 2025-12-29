@@ -54,11 +54,11 @@ content:
           - name: src
             label: Image (local or public)
             type: image
-            # Default to public media folder so Pages uploads go to public/images
+            # Default to colocating next to the post (upload to the post folder)
             options:
-              input: public/images
-              output: /images
-            hint: 'Prefer local (./cover.jpg) for colocated images. For media uploads, use the media picker (public/images) which will insert /images/... paths.'
+              input: src/content/post
+              output: .
+            hint: 'Prefer colocated (./cover.jpg). Media picker will upload into the post folder by default.'
           - name: alt
             label: Alt text
             type: string
@@ -79,7 +79,7 @@ content:
         label: Body
         type: rich-text
         options:
-          # Default media uploads to public/images so editors can insert /images/... paths
-          input: public/images
-          output: /images
-          # Tip: To colocate uploads next to a post, change the folder to src/content/post in the picker.
+          # Default media uploads to the post folder so inline images are colocated with the post
+          input: src/content/post
+          output: .
+          # Tip: To use a global media folder, change the picker to public/images.
