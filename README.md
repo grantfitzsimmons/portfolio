@@ -1,6 +1,8 @@
 # Grant Fitzsimmons Portfolio
 
-Based on [Astro Resume](https://github.com/srleom/astro-theme-resume)
+Based on [Astro Resume](https://github.com/srleom/astro-theme-resume).
+
+Managed using the [Pages CMS](https://app.pagescms.org).
 
 To start the server:
 
