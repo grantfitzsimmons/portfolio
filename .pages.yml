@@ -1,6 +1,6 @@
 media:
-  input: public
-  output: /
+  input: public/images
+  output: /images
 
 content:
   - name: posts
@@ -58,7 +58,7 @@ content:
             options:
               input: src/content/post
               output: .
-            hint: 'Prefer local (./cover.jpg). For public image, switch picker path to public/images and choose a /images/... path.'
+            hint: 'Prefer local (./cover.jpg). For public images, upload via the media picker (public/images) and choose a /images/... path.'
           - name: alt
             label: Alt text
             type: string
