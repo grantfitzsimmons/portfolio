@@ -1,6 +1,6 @@
 ---
 title: "First Five Days in Italy"
-description: "Some thoughts and lessons learned during my first five days in Ital0y"
+description: "Some thoughts and lessons learned during my first five days in Italy"
 publishDate: 2022-05-27
 updatedDate: 2022-05-27
 coverImage:
