@@ -24,11 +24,11 @@
 	}
 	.scroll-fade::before {
 		left: 0;
-		background: linear-gradient(to right, hsl(var(--background)), transparent);
+		background: linear-gradient(to right, hsl(var(--background) / 0.6), transparent);
 	}
 	.scroll-fade::after {
 		right: 0;
-		background: linear-gradient(to left, hsl(var(--background)), transparent);
+		background: linear-gradient(to left, hsl(var(--background) / 0.6), transparent);
 	}
 	.scroll-fade[data-fade-left='true']::before {
 		opacity: 1;
