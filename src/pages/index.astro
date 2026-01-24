@@ -103,6 +103,34 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 			allPostsByDate.length > 0 && (
 				<Section title='Blog Posts'>
 					<div class='scroll-fade relative overflow-hidden' id='blog-scroll-fade' data-fade-left='false' data-fade-right='false'>
+						<button
+							type='button'
+							class='scroll-chevron scroll-chevron-left'
+							data-scroll-btn='prev'
+							data-scroll-target='blog-posts'
+							aria-label='Scroll blog posts left'
+						>
+							<svg viewBox='0 0 24 24' class='h-5 w-5'>
+								<path
+										fill='currentColor'
+										d='m15.5 19l-7-7l7-7l1.4 1.4L11.3 12l5.6 5.6z'
+									></path>
+							</svg>
+						</button>
+						<button
+							type='button'
+							class='scroll-chevron scroll-chevron-right'
+							data-scroll-btn='next'
+							data-scroll-target='blog-posts'
+							aria-label='Scroll blog posts right'
+						>
+							<svg viewBox='0 0 24 24' class='h-5 w-5'>
+								<path
+										fill='currentColor'
+										d='m8.5 19l-1.4-1.4L12.7 12L7.1 6.4L8.5 5l7 7z'
+									></path>
+							</svg>
+						</button>
 						<ul
 							class='scrollbar-hide m-0 flex list-none items-stretch gap-x-3 overflow-x-auto p-0 pb-2'
 							data-scroll='blog-posts'
@@ -154,6 +182,34 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 				data-fade-left='false'
 				data-fade-right='false'
 			>
+				<button
+					type='button'
+					class='scroll-chevron scroll-chevron-left'
+					data-scroll-btn='prev'
+					data-scroll-target='projects'
+					aria-label='Scroll projects left'
+				>
+					<svg viewBox='0 0 24 24' class='h-5 w-5'>
+						<path
+							fill='currentColor'
+							d='m15.5 19l-7-7l7-7l1.4 1.4L11.3 12l5.6 5.6z'
+						></path>
+					</svg>
+				</button>
+				<button
+					type='button'
+					class='scroll-chevron scroll-chevron-right'
+					data-scroll-btn='next'
+					data-scroll-target='projects'
+					aria-label='Scroll projects right'
+				>
+					<svg viewBox='0 0 24 24' class='h-5 w-5'>
+						<path
+							fill='currentColor'
+							d='m8.5 19l-1.4-1.4L12.7 12L7.1 6.4L8.5 5l7 7z'
+						></path>
+					</svg>
+				</button>
 				<ul
 					class='scrollbar-hide m-0 flex list-none items-stretch gap-x-3 overflow-x-auto p-0 pb-2'
 					data-scroll='projects'
@@ -427,9 +483,31 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 		})
 	}
 
+	function getScrollAmount(scroller: HTMLElement) {
+		const firstItem = scroller.querySelector('li') as HTMLElement | null
+		if (!firstItem) return scroller.clientWidth
+		const styles = window.getComputedStyle(scroller)
+		const gap = Number.parseFloat(styles.columnGap || styles.gap || '0')
+		return firstItem.offsetWidth + (Number.isNaN(gap) ? 0 : gap)
+	}
+
+	function onChevronClick(event: MouseEvent) {
+		const target = event.currentTarget as HTMLElement
+		const dir = target.dataset.scrollBtn
+		const scrollTarget = target.dataset.scrollTarget
+		if (!dir || !scrollTarget) return
+		const scroller = document.querySelector(`[data-scroll="${scrollTarget}"]`) as HTMLElement | null
+		if (!scroller) return
+		const amount = getScrollAmount(scroller)
+		scroller.scrollBy({ left: dir === 'next' ? amount : -amount, behavior: 'smooth' })
+	}
+
 	updateFades()
 	window.addEventListener('resize', updateFades)
 	scrollPairs.forEach(({ scroller }) => {
 		scroller?.addEventListener('scroll', updateFades, { passive: true })
 	})
+
+	document.querySelectorAll('[data-scroll-btn]')
+		.forEach((btn) => btn.addEventListener('click', onChevronClick))
 </script>

@@ -36,6 +36,37 @@
 	.scroll-fade[data-fade-right='true']::after {
 		opacity: 1;
 	}
+
+	.scroll-chevron {
+		position: absolute;
+		top: 50%;
+		z-index: 5;
+		display: flex;
+		height: 36px;
+		width: 36px;
+		transform: translateY(-50%);
+		align-items: center;
+		justify-content: center;
+		border-radius: 9999px;
+		border: 1px solid hsl(var(--border));
+		background: hsl(var(--background) / 0.85);
+		color: hsl(var(--foreground));
+		opacity: 0;
+		pointer-events: auto;
+		transition: opacity 150ms ease;
+	}
+	.scroll-chevron-left {
+		left: 8px;
+	}
+	.scroll-chevron-right {
+		right: 8px;
+	}
+	.scroll-fade[data-fade-left='true'] .scroll-chevron-left {
+		opacity: 1;
+	}
+	.scroll-fade[data-fade-right='true'] .scroll-chevron-right {
+		opacity: 1;
+	}
 }
 
 @font-face {
