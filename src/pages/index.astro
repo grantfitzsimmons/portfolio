@@ -9,7 +9,6 @@ import SkillLayout from '../components/SkillLayout.astro'
 import { Image } from 'astro:assets'
 import astro from '../assets/profile.jpg'
 
-import PostPreview from '@/components/blog/PostPreview.astro'
 import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['SQL',  'Python', 'HTML', 'CSS']
@@ -106,7 +105,9 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 					<ul class='flex flex-col gap-y-2'>
 						{allPostsByDate.map((p) => (
 							<li class='flex flex-col gap-x-2 sm:flex-row'>
-								<PostPreview post={p} />
+								<a href={`/blog/${p.slug}/`} class='transition-all hover:text-muted-foreground'>
+									{p.data.title}
+								</a>
 							</li>
 						))}
 					</ul>
