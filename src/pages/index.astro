@@ -11,8 +11,8 @@ import astro from '../assets/profile.jpg'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['SQL',  'Python', 'HTML', 'CSS']
-const technologies = ['Git', 'VS Code', 'Docker', 'VPS', 'Figma', 'Lucidchart', 'Zoom', 'Discourse', 'Asana', 'Linux', 'macOS', 'Windows', 'Excel', 'Insightly CRM']
+const languages = ['SQL', 'Python', 'JavaScript', 'React', 'HTML', 'CSS']
+const technologies = ['Git', 'GitHub', 'Docker', 'AWS (EC2, RDS, S3)', 'DigitalOcean', 'MySQL', 'MariaDB', 'CI/CD Pipelines', 'Discourse', 'Asana', 'ZenHub', 'Power BI', 'Google Analytics', 'Linux', 'macOS', 'Windows']
 // const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
 // const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
 
@@ -151,43 +151,76 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 
 		<Section title='Experience'>
 			<Card
-				heading='Product Manager'
-				subheading='Specify Collections Consortium'
-				date='April 2023 - Present'
+				heading='Product and Technical Support Manager'
+				subheading='Specify Collections Consortium, University of Kansas'
+				date='May 2023 - Present'
 				imagePath='/src/assets/scc.jpeg'
-				altText='Lorem, ipsum dolor sit'
+				altText='Specify Collections Consortium'
 				imageClass='h-12 w-auto md:-left-16'
 			>
 			<ul class='ml-4 list-disc text-muted-foreground'>
 				<li>
-					<u>Customer Success Management:</u> I manage user support for over 400 research collections using Specify. I handle technical inquiries, manage support emails, and coordinate meetings and webinars to resolve issues quickly.
+					<u>Strategic Leadership:</u> Serve as the functional product lead and subject matter expert for the Specify Collections Consortium (SCC), a global software initiative for biological and earth science research collections. Translate complex user feedback into technical software requirements and define the strategic roadmap for platform development.
 				</li>
 				<li>
-					<u>Cloud Infrastructure Management:</u> I manage hosted instances on DigitalOcean, AWS, and DreamHost, handling over 80 Specify 7 instances. I work with databases, cloud storage, web servers, and ensure proper backup and access procedures.
+					<u>Operational Management:</u> Oversee internal operations for the support and documentation units. Establish and monitor Key Performance Indicators (KPIs) and metrics to evaluate operational effectiveness and service quality.
 				</li>
 				<li>
-					<u>GitHub and Development:</u> I contribute to the Specify codebase on GitHub, handling bug reports, feature requests, code changes, and pull request reviews.
+					<u>Supervision:</u> Recruit, train, and supervise student support staff. Direct the daily workflows of support personnel to ensure responsive technical assistance for over 450 member collections across 22 countries in 6 continents.
 				</li>
 				<li>
-					<u>Documentation & Community Building:</u> I created and maintain the <a class="text-blue-500" href="discourse.specifysoftware.org">Specify Community Forum</a>, where users can discuss and share insights. I've authored over 450 topics and published detailed documentation.
+					<u>International Partnerships:</u> Cultivate strategic relationships with international collaborators, including the Swiss Academy of Sciences and the Global Biodiversity Information Facility (GBIF), to orchestrate joint ventures and software integrations.
 				</li>
 				<li>
-					<u>Workshops and Conferences:</u> I host and participate in conferences worldwide, including panels at SPNHC and iDigBio, and lead workshops in Canada, Japan, Switzerland, and Australia.
+					<u>Software Engineering:</u> Contribute directly to the codebase with over 1,700 commits to SCC repositories since 2024. Lead Quality Assurance (QA) and User Experience (UX) testing to ensure software reliability and usability.
+				</li>
+				<li>
+					<u>Infrastructure Administration:</u> Architect and maintain cloud infrastructure on AWS (EC2, RDS, S3), ensuring high availability for mission-critical member portals and data hosting services.
 				</li>
 			</ul>
 			</Card>
 			<Card
-				heading='Software and Data Management Specialist'
-				subheading='Specify Collections Consortium'
-				date='September 2021 - April 2023'
-				altText='Lorem, ipsum dolor sit'
+				heading='Data Integration Specialist'
+				subheading='Specify Collections Consortium, University of Kansas'
+				date='November 2022 - May 2023'
+				imagePath='/src/assets/scc.jpeg'
+				altText='Specify Collections Consortium'
 				imageClass='h-12 w-auto md:-left-16'
-				>
-					<ul class='ml-4 list-disc text-muted-foreground'>
-						<li>
-							<u>Data Migration & Conversion:</u> I work closely with numerous institutions globally to facilitate the migration of their data into Specify. This includes driving data clean-up, standardization, and data entry form design to meet the institution’s requirements.
-						</li>
-					</ul>
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+						<u>Data Migration Engineering:</u> Coordinated large-scale data migration projects for major natural history museums, mapping legacy database structures to modern research data semantics.
+					</li>
+					<li>
+						<u>Interoperability Standards:</u> Designed and implemented automated export pipelines to global biodiversity aggregators (GBIF, iDigBio), ensuring compliance with Darwin Core standards.
+					</li>
+					<li>
+						<u>Technical Communication:</u> Developed comprehensive technical documentation and product requirements to support user adoption and data accessibility, cementing the Specify Community Forum as the #1 source of information and community for the SCC.
+					</li>
+				</ul>
+			</Card>
+			<Card
+				heading='Student Software Specialist'
+				subheading='Specify Collections Consortium, University of Kansas'
+				date='October 2021 - November 2022'
+				imagePath='/src/assets/scc.jpeg'
+				altText='Specify Collections Consortium'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+						<u>Quality Assurance:</u> Developed workflows for effectively evaluating Specify software during the early stages of development and codified methodologies for staged regression testing at scale.
+					</li>
+					<li>
+						<u>Technical Analysis:</u> Performed complex data cleaning and transformation using SQL and Python to resolve legacy data issues for member institutions.
+					</li>
+					<li>
+						<u>User Interface Design:</u> Collaborated with the engineering team to mock up User Interface (UI) designs and execute regression testing for the Specify 7 platform.
+					</li>
+					<li>
+						<u>Community Support:</u> Provided frontline technical solutions to the research community, fostering trust and ensuring member retention through high-quality service. Created the Specify Community Forum to put a public face on the SCC.
+					</li>
+				</ul>
 			</Card>
 			<Card
 				heading='Assistant Bakery Manager'
@@ -229,7 +262,7 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 			/> -->
 		</Section>
 
-		<Section title='Publications'>
+		<Section title='Publications & Presentations'>
 			<Card
 				as='a'
 				heading='Digitization Planning for Large Collections and Agencies with Specify 7'
@@ -241,12 +274,49 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 			/>
 			<Card
 				as='a'
-				heading='Extending Specify 7 for Geoscience Collections.'
-				subheading='https://doi.org/10.3897/biss.8.141673.'
-				altText='Extending Specify 7 for Geoscience Collections.'
+				heading='Extending Specify 7 for Geoscience Collections'
+				subheading='https://doi.org/10.3897/biss.8.141673'
+				altText='Extending Specify 7 for Geoscience Collections'
 				imageClass='h-11 w-auto md:-left-16'
 				href='https://scholar.google.com/citations?view_op=view_citation&hl=en&user=InB8u9gAAAAJ&citation_for_view=InB8u9gAAAAJ:u5HHmVD_uO8C'
 			/>
+		</Section>
+
+		<Section title='Conference Presentations'>
+			<div class='space-y-4 text-muted-foreground'>
+				<div>
+					<h3 class='font-semibold text-foreground'>Oral Presentations</h3>
+					<ul class='ml-4 list-disc space-y-1 mt-2'>
+						<li>"Advancing Biological Collections Computing with Specify 7: A Year of Transformational Updates" - SPNHC, San Francisco, CA (May 2023)</li>
+						<li>"Data cleaning for maximum impact: Tools and workflows for data providers" - Digital Data Conference, Lawrence, KS (May 2024)</li>
+						<li>"GeoSpecify, a Collection Management Platform for Geological Objects" - European Mineralogical Conference, Dublin, Ireland (August 2024)</li>
+						<li>"Digitization Planning for Large Collections with Specify 7" - SPNHC-TDWG Joint Conference, Okinawa, Japan (September 2024)</li>
+						<li>"Extending Specify 7 for Geoscience Collections" - SPNHC, Okinawa, Japan (September 2024)</li>
+						<li>"Publishing Your Data with Specify 7" - SPNHC, Lawrence, KS (May 2025)</li>
+						<li>"Strategic Directions for the Specify Collections Consortium" - SPNHC, Lawrence, KS (May 2025)</li>
+					</ul>
+				</div>
+				<div>
+					<h3 class='font-semibold text-foreground'>Workshops Led</h3>
+					<ul class='ml-4 list-disc space-y-1 mt-2'>
+						<li>SwissCollNet Natural History Museums - Switzerland (June 2023)</li>
+						<li>Pacific Forestry Centre, Canadian Forest Service - Victoria, BC, Canada (February 2024)</li>
+						<li>Western Australia Herbarium, DBCA - Perth, Australia (September 2024)</li>
+						<li>University of Kansas, SPNHC - Lawrence, KS (May 2025)</li>
+						<li>Florida Museum of Natural History - Gainesville, FL (October 2025)</li>
+						<li>CSIC-MNCN, CETAF-DEST course - Madrid, Spain (December 2025)</li>
+					</ul>
+				</div>
+				<div>
+					<h3 class='font-semibold text-foreground'>Invited Panels & Symposia</h3>
+					<ul class='ml-4 list-disc space-y-1 mt-2'>
+						<li>"Digital Data Standards in Biodiversity" - BioDigiCon (2023)</li>
+						<li>"Introduction to Digitization of Biodiversity Specimens" - iDigBio Digitization Academy (2023, 2024, 2025)</li>
+						<li>"Linking People and Specimens" - Bionomia Workshop (2024)</li>
+						<li>Community Data Standards Groups - GBIF and TDWG meetings</li>
+					</ul>
+				</div>
+			</div>
 		</Section>
 
 		<!-- <Section title='Certifications'>
