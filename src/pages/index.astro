@@ -508,6 +508,6 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 		scroller?.addEventListener('scroll', updateFades, { passive: true })
 	})
 
-	document.querySelectorAll('[data-scroll-btn]')
+	document.querySelectorAll<HTMLElement>('[data-scroll-btn]')
 		.forEach((btn) => btn.addEventListener('click', onChevronClick))
 </script>
