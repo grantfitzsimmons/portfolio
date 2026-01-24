@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	.scrollbar-hide {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera */
+	}
+
+	.scroll-fade::before,
+	.scroll-fade::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 64px;
+		height: 100%;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 150ms ease;
+	}
+	.scroll-fade::before {
+		left: 0;
+		background: linear-gradient(to right, hsl(var(--background)), transparent);
+	}
+	.scroll-fade::after {
+		right: 0;
+		background: linear-gradient(to left, hsl(var(--background)), transparent);
+	}
+	.scroll-fade[data-fade-left='true']::before {
+		opacity: 1;
+	}
+	.scroll-fade[data-fade-right='true']::after {
+		opacity: 1;
+	}
+}
+
 @font-face {
 	font-family: 'Satoshi';
 	src: url('/fonts/Satoshi-Variable.ttf');
