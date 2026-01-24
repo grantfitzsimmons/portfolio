@@ -9,17 +9,17 @@ import SkillLayout from '../components/SkillLayout.astro'
 import { Image } from 'astro:assets'
 import astro from '../assets/profile.jpg'
 
-// import PostPreview from '@/components/blog/PostPreview.astro'
-// import { getAllPosts, sortMDByDate } from '@/utils'
+import PostPreview from '@/components/blog/PostPreview.astro'
+import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['SQL',  'Python', 'HTML', 'CSS']
 const technologies = ['Git', 'VS Code', 'Docker', 'VPS', 'Figma', 'Lucidchart', 'Zoom', 'Discourse', 'Asana', 'Linux', 'macOS', 'Windows', 'Excel', 'Insightly CRM']
 // const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
 // const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
 
-// const MAX_POSTS = 3
-// const allPosts = await getAllPosts()
-// const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+const MAX_POSTS = 3
+const allPosts = await getAllPosts()
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -100,7 +100,7 @@ const technologies = ['Git', 'VS Code', 'Docker', 'VPS', 'Figma', 'Lucidchart', 
 				<p>I enjoy learning new things and building meaningful connections while contributing to scientific initiatives and research. I am an avid traveler who loves visiting new places and immersing myself in different cultures. In my free time, I enjoy learning new skills, going for long walks, reading, writing, and spending time with family and friends.</p>
 			</p>
 		</Section>
-		<!-- {
+		{
 			allPostsByDate.length > 0 && (
 				<Section title='Blog Posts'>
 					<ul class='flex flex-col gap-y-2'>
@@ -112,7 +112,7 @@ const technologies = ['Git', 'VS Code', 'Docker', 'VPS', 'Figma', 'Lucidchart', 
 					</ul>
 				</Section>
 			)
-		} -->
+		}
 
 		<Section title='Projects'>
 			<div class='grid grid-cols-1 gap-y-3 sm:grid-cols-2 sm:gap-x-3 sm:gap-y-3'>
