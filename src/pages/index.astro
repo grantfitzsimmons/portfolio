@@ -19,7 +19,7 @@ const technologies = ['Git', 'VS Code', 'Docker', 'VPS', 'Figma', 'Lucidchart', 
 
 const MAX_POSTS = 3
 const allPosts = await getAllPosts()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
