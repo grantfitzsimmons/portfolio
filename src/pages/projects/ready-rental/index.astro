@@ -9,7 +9,7 @@ const description =
 	'Ready Rental website project built in Squarespace, focused on trailer rental information, lead capture, and customer contact workflows.'
 
 const screenshotModules = import.meta.glob<{ default: ImageMetadata }>(
-	'/src/pages/projects/ready-rental/screenshots/*.{png,jpg,jpeg,gif,webp}',
+	'/src/assets/projects/ready-rental/screenshots/*.{png,jpg,jpeg,gif,webp}',
 	{ eager: true }
 )
 
@@ -59,7 +59,7 @@ const screenshots = Object.entries(screenshotModules)
 <ProjectLayout
 	title='Ready Rental Website'
 	description={description}
-	coverImage='/src/pages/projects/ready-rental/screenshots/homepage.png'
+	coverImage='/src/assets/projects/ready-rental/screenshots/homepage.png'
 	coverAlt='Ready Rental website homepage'
 	role='Web builder and architect'
 	dates='February 2023 - March 2023'

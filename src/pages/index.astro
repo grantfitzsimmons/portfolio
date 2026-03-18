@@ -136,7 +136,7 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 							class='scrollbar-hide m-0 flex list-none items-stretch gap-x-3 overflow-x-auto p-0 pb-2'
 							data-scroll='blog-posts'
 						>
-						{allPostsByDate.map((p) => {
+						{allPostsByDate.map((p, index) => {
 							const cover = p.data.coverImage
 							return (
 									<li class='flex'>
@@ -151,14 +151,18 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 													src={cover.src}
 													alt={cover.alt}
 													class='h-48 w-full rounded-2xl rounded-bl-none rounded-br-none object-cover'
-													loading='eager'
+													loading={index === 0 ? 'eager' : 'lazy'}
+													fetchpriority={index === 0 ? 'high' : 'auto'}
+													decoding='async'
 												/>
 											) : (
 												<Image
 													src={cover.src}
 													alt={cover.alt}
 													class='h-48 w-full rounded-2xl rounded-bl-none rounded-br-none object-cover'
-													loading='eager'
+													loading={index === 0 ? 'eager' : 'lazy'}
+													fetchpriority={index === 0 ? 'high' : 'auto'}
+													sizes='(min-width: 640px) 320px, 280px'
 												/>
 											)
 										)}

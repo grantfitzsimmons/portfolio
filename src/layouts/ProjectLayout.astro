@@ -27,13 +27,14 @@ const {
 	externalLabel = 'Visit project'
 } = Astro.props
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-	'/src/{assets,pages/projects}/**/*.{jpeg,jpg,png,gif,webp}'
-)
+const images = import.meta.glob('/src/assets/**/*.{jpeg,jpg,png,gif,webp}', {
+	eager: true,
+	import: 'default'
+}) as Record<string, ImageMetadata>
 
 if (!images[coverImage]) {
 	throw new Error(
-		`"${coverImage}" does not exist in glob: "/src/{assets,pages/projects}/**/*.{jpeg,jpg,png,gif,webp}"`
+		`"${coverImage}" does not exist in glob: "/src/assets/**/*.{jpeg,jpg,png,gif,webp}"`
 	)
 }
 ---
@@ -58,10 +59,12 @@ if (!images[coverImage]) {
 		<div class='mt-6 grid gap-8 lg:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)]'>
 			<div class='flex flex-col gap-y-5'>
 				<Image
-					src={images[coverImage]()}
+					src={images[coverImage]}
 					alt={coverAlt}
 					class='h-72 w-full rounded-2xl border border-border object-cover object-top'
 					loading='eager'
+					fetchpriority='high'
+					sizes='(min-width: 1024px) 55vw, 100vw'
 				/>
 				<div class='space-y-3'>
 					<h1 class='text-2xl font-semibold'>{title}</h1>

@@ -9,7 +9,7 @@ const description =
 	'The Specify Collections Consortium website was rebuilt from scratch using Astro, JavaScript, and TypeScript.'
 
 const screenshotModules = import.meta.glob<{ default: ImageMetadata }>(
-	'/src/pages/projects/specify-software/screenshots/*.{png,jpg,jpeg,gif,webp}',
+	'/src/assets/projects/specify-software/screenshots/*.{png,jpg,jpeg,gif,webp}',
 	{ eager: true }
 )
 
@@ -66,7 +66,7 @@ const screenshots = Object.entries(screenshotModules)
 <ProjectLayout
 	title='Specify Collections Consortium Website'
 	description={description}
-	coverImage='/src/pages/projects/specify-software/screenshots/homepage.png'
+	coverImage='/src/assets/projects/specify-software/screenshots/homepage.png'
 	coverAlt='Specify Collections Consortium website project'
 	role='Website architect and developer'
 	dates='2025 - Present'

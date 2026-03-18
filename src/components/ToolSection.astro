@@ -40,6 +40,10 @@ const { class: className, title, tools, ...props } = Astro.props
 								src={tool.iconPath}
 								alt={`${tool.name} icon`}
 								class='z-20 h-10 w-10 rounded-lg bg-muted p-2'
+								width='40'
+								height='40'
+								loading='lazy'
+								decoding='async'
 							/>
 						) : (
 						<Icon

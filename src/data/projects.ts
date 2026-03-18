@@ -12,14 +12,14 @@ export const projectCards: ProjectCardItem[] = [
 		heading: 'Specify 7',
 		subheading:
 			'A collections management platform for natural history museums and research collections. 100% open-source and free to use.',
-		imagePath: '/src/pages/projects/specify-7/screenshots/homepage.png',
+		imagePath: '/src/assets/projects/specify-7/screenshots/homepage.png',
 		altText: 'Specify 7'
 	},
     {
 		href: '/projects/specify-software/',
 		heading: 'Specify Collections Consortium Website',
 		subheading: 'Built from scratch using Astro, JavaScript, and TypeScript. Integrated the new logo and branding across the site while meeting top SEO and accessibility standards.',
-		imagePath: '/src/pages/projects/specify-software/screenshots/homepage.png',
+		imagePath: '/src/assets/projects/specify-software/screenshots/homepage.png',
 		altText: 'Specify Collections Consortium website'
 	},
 	{
@@ -27,7 +27,7 @@ export const projectCards: ProjectCardItem[] = [
 		heading: 'Ready Rental Website',
 		subheading:
 			'Built with Squarespace as web builder and architect. Developed pipelines for rental requests, scheduling, and contact forms. Integrated with Google Workspace for email and calendar management.',
-		imagePath: '/src/pages/projects/ready-rental/screenshots/homepage.png',
+		imagePath: '/src/assets/projects/ready-rental/screenshots/homepage.png',
 		altText: 'Ready Rental website homepage'
 	},
 	{

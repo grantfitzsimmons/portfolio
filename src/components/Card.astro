@@ -14,11 +14,14 @@ const {
 	altText,
 	imageClass
 } = Astro.props
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}')
+const images = import.meta.glob('/src/assets/*.{jpeg,jpg,png,gif,webp}', {
+	eager: true,
+	import: 'default'
+}) as Record<string, ImageMetadata>
 
 if (imagePath) {
 	if (!images[imagePath])
-		throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`)
+		throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif,webp}"`)
 }
 ---
 
@@ -33,10 +36,10 @@ if (imagePath) {
 	{
 		imagePath && (
 			<Image
-				src={images[imagePath]()}
+				src={images[imagePath]}
 				alt={altText}
 				class={cn('mb-3 md:absolute md:mb-0', imageClass)}
-				loading='eager'
+				loading='lazy'
 			/>
 		)
 	}

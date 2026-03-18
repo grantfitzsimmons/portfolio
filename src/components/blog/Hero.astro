@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
+import type { ImageMetadata } from 'astro'
 import { Image } from 'astro:assets'
 import FormattedDate from '../FormattedDate.astro'
 
@@ -11,12 +12,12 @@ const {
 	content: { data, render }
 } = Astro.props
 
-// Type guard to narrow the union from the content schema (string | ImageData)
-// so TypeScript knows when it's safe to pass to the astro:assets <Image /> component.
-function isImageData(value: unknown): value is { src: string; width?: number; height?: number } {
-	// astro:assets image objects are plain objects with a `src` property (string)
-	// and may include width/height/format. We check for an object with a string `src`.
-	return typeof value === 'object' && value !== null && 'src' in value && typeof (value as any).src === 'string'
+function isImageMetadata(value: unknown): value is ImageMetadata {
+	if (typeof value !== 'object' || value === null) return false
+	if (!("src" in value) || typeof (value as ImageMetadata).src !== 'string') return false
+	if (!("width" in value) || typeof (value as ImageMetadata).width !== 'number') return false
+	if (!("height" in value) || typeof (value as ImageMetadata).height !== 'number') return false
+	return true
 }
 
 // Local alias to help TypeScript/JSDOM narrowing in the template
@@ -37,14 +38,16 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 				class='rounded-2xl object-cover'
 				fetchpriority='high'
 				loading='eager'
+				decoding='async'
 				src={cover.src}
 			/>
-		) : isImageData(cover.src) ? (
+		) : isImageMetadata(cover.src) ? (
 			<Image
 				alt={cover.alt}
 				class='rounded-2xl object-cover'
 				fetchpriority='high'
 				loading='eager'
+				sizes='(min-width: 1024px) 75vw, 100vw'
 				src={cover.src}
 			/>
 		) : (
@@ -53,6 +56,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 				class='rounded-2xl object-cover'
 				fetchpriority='high'
 				loading='eager'
+				decoding='async'
 				src={String((cover as any).src ?? '')}
 			/>
 		)}

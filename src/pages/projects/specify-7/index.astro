@@ -9,7 +9,7 @@ const description =
 	'A collections management platform for natural history museums and research collections. 100% open-source and free to use.'
 
 const screenshotModules = import.meta.glob<{ default: ImageMetadata }>(
-	'/src/pages/projects/specify-7/screenshots/*.{png,jpg,jpeg,gif,webp}',
+	'/src/assets/projects/specify-7/screenshots/*.{png,jpg,jpeg,gif,webp}',
 	{ eager: true }
 )
 
@@ -71,7 +71,7 @@ const screenshots = Object.entries(screenshotModules)
 <ProjectLayout
 	title='Specify 7'
 	description={description}
-	coverImage='/src/pages/projects/specify-7/screenshots/homepage.png'
+		coverImage='/src/assets/projects/specify-7/screenshots/homepage.png'
 	coverAlt='Specify 7 interface preview'
 	role='Technical Support Manager; product requirements, implementation advising, and documentation lead'
 	dates='Late 2021 - Present'
