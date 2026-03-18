@@ -1,0 +1,86 @@
+---
+import ProjectLayout from '@/layouts/ProjectLayout.astro'
+import Section from '@/components/Section.astro'
+
+const description =
+	'An initiative to expand Specify for earth sciences, supporting geoscience collections of rocks, minerals, and meteorites, co-led by the Swiss Natural History Museums of Bern, Basel, and Geneva and funded by SwissCollNet.'
+---
+
+<ProjectLayout
+	title='GeoSpecify'
+	description={description}
+	coverImage='/src/assets/geospecify.png'
+	coverAlt='GeoSpecify project preview'
+	role='Technical lead'
+	dates='2023 - 2026'
+	externalLink='https://discourse.specifysoftware.org/t/from-biodiversity-to-earth-science-and-beyond-with-geospecify/3343'
+	externalLabel='Read announcement'
+>
+	<Section title='Overview'>
+		<p class='text-muted-foreground'>
+			GeoSpecify extends Specify for earth science collections, including rocks,
+			minerals, meteorites, cores, and related geosamples. I helped lead this
+			work from requirements through implementation with museum partners and SCC
+			staff, resulting in production capabilities embedded in Specify 7.12 and
+			supported in future releases.
+		</p>
+	</Section>
+	<Section title='My Contributions'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>
+				Co-led technical direction for the GeoSpecify subsystem and translated
+				geoscience workflows into implementable product requirements.
+			</li>
+			<li>
+				Participated in intensive in-person requirements workshops across Swiss
+				partner institutions to map geology curation practices into data-model and
+				UX decisions.
+			</li>
+			<li>
+				Helped shape major model extensions for heterogeneous geocollections,
+				including Collection Object Groups (COGs), Components, and Collection
+				Object Types (COTs).
+			</li>
+			<li>
+				Contributed to integrating these concepts end-to-end in backend processing,
+				APIs, form design, query behavior, UI workflows, and export mappings.
+			</li>
+			<li>
+				Supported requirements for geology-specific capabilities such as
+				chronostratigraphic querying, tectonic/geologic context support, hazard
+				tracking, and specialized default forms/pick lists.
+			</li>
+			<li>
+				Helped align implementation with legacy institutional practices so
+				collections could preserve existing cataloging protocols while adopting
+				modernized infrastructure.
+			</li>
+		</ul>
+	</Section>
+	<Section title='Highlights'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>
+				GeoSpecify now supports complex compound specimens, enabling linked but
+				distinct identities for components inside a single physical object.
+			</li>
+			<li>
+				Collections can manage multiple object types and taxonomic/classification
+				authorities in one database with stronger retrieval and curation patterns.
+			</li>
+			<li>
+				Extended age-query workflows now support searching by chronostratigraphic
+				ranges, not only literal age names.
+			</li>
+		</ul>
+		<p class='text-muted-foreground'>
+			For complete context, see the full public post:
+			<a
+				href='https://discourse.specifysoftware.org/t/from-biodiversity-to-earth-science-and-beyond-with-geospecify/3343'
+				target='_blank'
+				class='font-medium text-foreground underline underline-offset-4'
+			>
+				From Biodiversity to Earth Science and Beyond with GeoSpecify
+			</a>.
+		</p>
+	</Section>
+</ProjectLayout>

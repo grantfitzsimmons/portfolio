@@ -1,0 +1,50 @@
+---
+import PageLayout from '@/layouts/BaseLayout.astro'
+import Button from '@/components/Button.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+
+import { projectCards } from '../../data/projects'
+---
+
+<PageLayout meta={{ title: 'Projects' }}>
+	<div class='w-full'>
+		<Button title='Back' href='/' style='button'>
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				width='14'
+				height='14'
+				viewBox='0 0 24 24'
+				slot='icon-before'
+			>
+				<path
+					fill='currentColor'
+					d='m6.921 12.5l5.792 5.792L12 19l-7-7l7-7l.713.708L6.921 11.5H19v1z'
+				></path>
+			</svg>
+		</Button>
+
+		<div class='mt-5 flex w-full flex-col gap-y-8'>
+			<div>
+				<h1 class='mb-1 text-2xl font-bold'>Projects</h1>
+				<p class='text-muted-foreground'>A collection of software and infrastructure projects.</p>
+			</div>
+
+			<ul class='grid list-none gap-4 p-0 sm:grid-cols-2'>
+				{
+					projectCards.map((project) => (
+						<li class='flex'>
+							<ProjectCard
+								href={project.href}
+								heading={project.heading}
+								subheading={project.subheading}
+								imagePath={project.imagePath}
+								altText={project.altText}
+								class='h-full w-full'
+							/>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+</PageLayout>

@@ -1,0 +1,78 @@
+---
+import type { ImageMetadata } from 'astro'
+
+import ProjectLayout from '@/layouts/ProjectLayout.astro'
+import Section from '@/components/Section.astro'
+import ProjectScreenshotGallery from '@/components/ProjectScreenshotGallery.astro'
+
+const description =
+	'Ready Rental website project built in Squarespace, focused on trailer rental information, lead capture, and customer contact workflows.'
+
+const screenshotModules = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/pages/projects/ready-rental/screenshots/*.{png,jpg,jpeg,gif,webp}',
+	{ eager: true }
+)
+
+const screenshotTitleOverrides: Record<string, string> = {
+	homepage: 'Homepage',
+	aboutPage: 'About Page',
+	trailerRental: 'Trailer Rental',
+	requestATrailer: 'Request a Trailer',
+	getInTouchForm: 'Get In Touch Form',
+	trailerOverviewAndFooter: 'Trailer Overview and Footer'
+}
+
+const screenshotOrder = [
+	'homepage',
+	'aboutPage',
+	'trailerRental',
+	'requestATrailer',
+	'getInTouchForm',
+	'trailerOverviewAndFooter'
+]
+
+const screenshots = Object.entries(screenshotModules)
+	.map(([path, module]) => {
+		const filename = path.split('/').pop()?.replace(/\.[^/.]+$/, '') ?? ''
+		const title =
+			screenshotTitleOverrides[filename] ||
+			filename
+				.replace(/([A-Z])/g, ' $1')
+				.replace(/[-_]+/g, ' ')
+				.replace(/^./, (char) => char.toUpperCase())
+
+		return {
+			filename,
+			title,
+			image: module.default
+		}
+	})
+	.sort((a, b) => {
+		const aIndex = screenshotOrder.indexOf(a.filename)
+		const bIndex = screenshotOrder.indexOf(b.filename)
+		const safeA = aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex
+		const safeB = bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex
+		return safeA - safeB
+	})
+---
+
+<ProjectLayout
+	title='Ready Rental Website'
+	description={description}
+	coverImage='/src/pages/projects/ready-rental/screenshots/homepage.png'
+	coverAlt='Ready Rental website homepage'
+	role='Web builder and architect'
+	dates='February 2023 - March 2023'
+>
+	<Section title='Build'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>Built with Squarespace.</li>
+			<li>Designed and implemented the website architecture and page structure.</li>
+			<li>Focused on rental information clarity and lead conversion flows.</li>
+		</ul>
+	</Section>
+
+	<Section title='Screenshots'>
+		<ProjectScreenshotGallery screenshots={screenshots} galleryId='ready-rental' />
+	</Section>
+</ProjectLayout>

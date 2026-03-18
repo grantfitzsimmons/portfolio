@@ -10,10 +10,11 @@ import { Image } from 'astro:assets'
 import astro from '../assets/profile.png'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
+import { projectCards } from '../data/projects'
 
-const languages = ['SQL', 'Python', 'JavaScript', 'React', 'HTML', 'CSS']
-const technologies = ['Git', 'GitHub', 'Docker', 'AWS (EC2, RDS, S3)', 'DigitalOcean', 'MySQL', 'MariaDB', 'CI/CD Pipelines', 'Discourse', 'Asana', 'Linux', 'macOS', 'Windows']
-// const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
+// const languages = ['SQL', 'Python', 'JavaScript', 'React', 'Astro', 'HTML', 'CSS']
+const technologies = ['Git', 'GitHub', 'Docker', 'AWS (EC2, RDS, S3)', 'Cloudflare (DNS, WAF, Workers)', 'MySQL', 'MariaDB', 'CI/CD Pipelines', 'Discourse', 'Asana', 'Notion', 'Tailscale', 'Linux', 'macOS', 'Windows']
+const specialties = ['Biodiversity Informatics','Data Management','Project Management', 'Customer Success', 'Database Management', 'Cloud Infrastructure Administration', 'Technical Documentation', 'Data Migration and Integration', 'International Collaboration', 'Business Administration']
 // const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
 
 const MAX_POSTS = 5
@@ -214,46 +215,20 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 					class='scrollbar-hide m-0 flex list-none items-stretch gap-x-3 overflow-x-auto p-0 pb-2'
 					data-scroll='projects'
 				>
-					<li class='flex'>
-						<ProjectCard
-							href='https://sp7demofish.specifycloud.org/'
-							heading='Specify 7'
-							subheading='A collections management platform for natural history museums and research collections. 100% open-source and free to use.'
-							imagePath='/src/assets/specify7.png'
-							altText='Specify 7'
-							class='min-w-[280px] sm:min-w-[320px]'
-						/>
-					</li>
-					<!-- <li class='flex'>
-						<ProjectCard
-							href='blog/geo-swiss/'
-							heading='GeoSpecify'
-							subheading='An initiative to expand Specify for earth sciences, supporting geoscience collections of rocks, minerals, and meteorites, is co-led by the Swiss Natural History Museums of Bern, Basel, and Geneva, funded by SwissCollNet.'
-							imagePath='/src/assets/geospecify.png'
-							altText='Example'
-							class='min-w-[280px] sm:min-w-[320px]'
-						/>
-					</li> -->
-					<li class='flex'>
-						<ProjectCard
-							href='https://discourse.specifysoftware.org'
-							heading='Specify Community Forum'
-							subheading='Established and maintain the Specify Community Forum, a platform for Specify users to collaborate, discuss, and read documentation.'
-							imagePath='/src/assets/speciforum.png'
-							altText='Speciforum'
-							class='min-w-[280px] sm:min-w-[320px]'
-						/>
-					</li>
-					<li class='flex'>
-						<ProjectCard
-							href='https://github.com/grantfitzsimmons'
-							heading='DevOps Work and Documentation'
-							subheading='Working on a variety of DevOps projects, including cloud infrastructure management, GitHub contributions, and documentation.'
-							imagePath='/src/assets/techdocs.png'
-							altText='Tech Docs'
-							class='min-w-[280px] sm:min-w-[320px]'
-						/>
-					</li>
+					{
+						projectCards.map((project) => (
+							<li class='flex'>
+								<ProjectCard
+									href={project.href}
+									heading={project.heading}
+									subheading={project.subheading}
+									imagePath={project.imagePath}
+									altText={project.altText}
+									class='min-w-[280px] sm:min-w-[320px]'
+								/>
+							</li>
+						))
+					}
 				</ul>
 			</div>
 		</Section>
@@ -452,8 +427,9 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 		</Section> -->
 
 		<Section title='Skills'>
-			<SkillLayout title='Languages' skills={languages} />
+			<SkillLayout title='Specialties' skills={specialties} />
 			<SkillLayout title='Technologies' skills={technologies} />
+			<!-- <SkillLayout title='Languages' skills={languages} /> -->
 			<!-- <SkillLayout title='Backend' skills={backend} />
 			<SkillLayout title='Others' skills={others} /> -->
 		</Section>

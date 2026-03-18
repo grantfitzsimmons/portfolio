@@ -1,0 +1,79 @@
+---
+import ProjectLayout from '@/layouts/ProjectLayout.astro'
+import Section from '@/components/Section.astro'
+
+const description =
+	'System administration and documentation across AWS, Cloudflare, Exoscale, and other platforms.'
+---
+
+<ProjectLayout
+	title='System Administration and Documentation'
+	description={description}
+	coverImage='/src/assets/techdocs.png'
+	coverAlt='Infrastructure documentation preview'
+	role='System Administration and Documentation lead'
+	dates='2023 - Present'
+>
+	<Section title='Overview'>
+		<p class='text-muted-foreground'>
+			I play a major role in infrastructure standardization across cloud platforms, DNS providers,
+			deployment tooling, and operational policy. My work focuses on making global
+			environments more secure, easier to operate, and more consistent to deploy.
+
+            This includes ensuring we meet our SLAs for uptime and response times, managing security controls and access policies, and building documentation to make our infrastructure more transparent and easier to understand for users and maintainers alike.
+		</p>
+	</Section>
+	<Section title='Infrastructure Leadership'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>
+				Standardized domain and DNS management by consolidating zones from Namecheap,
+				GoDaddy, Network Solutions, and other registrars into Cloudflare.
+			</li>
+			<li>
+				Implemented Cloudflare security and traffic controls including WAF policies,
+				bot protection, AI scraping protections, proxied requests, and routing rules.
+			</li>
+			<li>
+				Built and maintained redirect strategies and Cloudflare Worker processes for
+				seamless redirection and request handling.
+			</li>
+		</ul>
+	</Section>
+	<Section title='Platform Operations'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>
+				Defined deployment scripts and operational standards to normalize application
+				releases across environments.
+			</li>
+			<li>
+				Established remote-access policies following infrastructure security best
+				practices for distributed systems and teams.
+			</li>
+			<li>
+				Managed backup practices for MariaDB databases and instance configurations to
+				reduce recovery risk.
+			</li>
+		</ul>
+	</Section>
+	<Section title='Scale and Reliability'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>
+				Managed MariaDB environments in AWS RDS for 150+ databases across multiple
+				regions worldwide.
+			</li>
+			<li>
+				Managed fleets of 40+ EC2 instances and defined hardened remote access
+				policies for ongoing operations.
+			</li>
+			<li>
+				Deployed Tailscale-based operational visibility workflows and integrated
+				Prometheus + Grafana monitoring for container logs, memory/resource tracking,
+				and server health.
+			</li>
+			<li>
+				Configured alerting pipelines through Slack webhooks and email to surface
+				time-sensitive infrastructure issues quickly.
+			</li>
+		</ul>
+	</Section>
+</ProjectLayout>

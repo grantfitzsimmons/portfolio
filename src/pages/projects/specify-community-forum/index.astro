@@ -1,0 +1,32 @@
+---
+import ProjectLayout from '@/layouts/ProjectLayout.astro'
+import Section from '@/components/Section.astro'
+
+const description =
+	'Established and maintain the Specify Community Forum, a platform for Specify users to collaborate, discuss, and read documentation.'
+---
+
+<ProjectLayout
+	title='Specify Community Forum'
+	description={description}
+	coverImage='/src/assets/speciforum.png'
+	coverAlt='Specify Community Forum preview'
+	role='Founder, admin, and lead contributor'
+	dates='2022 - Present'
+	externalLink='https://discourse.specifysoftware.org'
+	externalLabel='Visit forum'
+>
+	<Section title='Overview'>
+		<p class='text-muted-foreground'>
+			The Specify Community Forum connects users, maintainers, and contributors
+			in one place for collaboration, documentation, and announcements.
+		</p>
+	</Section>
+	<Section title='Responsibilities'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>Founded and administer the community platform.</li>
+			<li>Lead contributor to documentation and support content.</li>
+			<li>Guide community engagement and moderation.</li>
+		</ul>
+	</Section>
+</ProjectLayout>

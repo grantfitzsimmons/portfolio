@@ -7,7 +7,7 @@ Deployed using [Vercel](https://vercel.com/).
 To start the server:
 
 ```zsh
-npm run dev
+pnpm run dev
 ```
 
 You can see it in your browser at `http://localhost:4321/`!

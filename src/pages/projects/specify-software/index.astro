@@ -1,0 +1,112 @@
+---
+import type { ImageMetadata } from 'astro'
+
+import ProjectLayout from '@/layouts/ProjectLayout.astro'
+import Section from '@/components/Section.astro'
+import ProjectScreenshotGallery from '@/components/ProjectScreenshotGallery.astro'
+
+const description =
+	'The Specify Collections Consortium website was rebuilt from scratch using Astro, JavaScript, and TypeScript.'
+
+const screenshotModules = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/pages/projects/specify-software/screenshots/*.{png,jpg,jpeg,gif,webp}',
+	{ eager: true }
+)
+
+const screenshotTitleOverrides: Record<string, string> = {
+	homepage: 'Homepage',
+	governanceDescription: 'Governance Description',
+	membershipPage: 'Membership Page',
+	membershipInfo: 'Membership Info',
+	membershipLevels: 'Membership Levels',
+	mapOfMembers: 'Map of Members',
+	contactForm: 'Contact Form',
+	specifyFeatures: 'Specify Features',
+	'Google PageSpeed Insights': 'Google PageSpeed Insights'
+}
+
+const screenshotOrder = [
+	'homepage',
+	'governanceDescription',
+	'membershipPage',
+	'membershipInfo',
+	'membershipLevels',
+	'mapOfMembers',
+	'contactForm',
+	'specifyFeatures',
+	'Google PageSpeed Insights'
+]
+
+const screenshots = Object.entries(screenshotModules)
+	.sort(([a], [b]) => a.localeCompare(b))
+	.map(([path, module]) => {
+		const filename = path.split('/').pop()?.replace(/\.[^/.]+$/, '') ?? ''
+		const title =
+			screenshotTitleOverrides[filename] ||
+			filename
+				.replace(/([A-Z])/g, ' $1')
+				.replace(/[-_]+/g, ' ')
+				.replace(/^./, (char) => char.toUpperCase())
+
+		return {
+			filename,
+			title,
+			image: module.default
+		}
+	})
+	.sort((a, b) => {
+		const aIndex = screenshotOrder.indexOf(a.filename)
+		const bIndex = screenshotOrder.indexOf(b.filename)
+		const safeA = aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex
+		const safeB = bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex
+		return safeA - safeB
+	})
+---
+
+<ProjectLayout
+	title='Specify Collections Consortium Website'
+	description={description}
+	coverImage='/src/pages/projects/specify-software/screenshots/homepage.png'
+	coverAlt='Specify Collections Consortium website project'
+	role='Website architect and developer'
+	dates='2025 - Present'
+	externalLink='https://www.specifysoftware.org/'
+	externalLabel='View live site'
+>
+	<Section title='Build'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>Built with Astro, JavaScript, and TypeScript.</li>
+			<li>Integrated a new logo and a refreshed color scheme across the site.</li>
+			<li>Standardized color schemes across both Specify 7 and the website.</li>
+			<li>
+				Created vector graphics with silhouettes of creatures to represent software
+				disciplines.
+			</li>
+		</ul>
+	</Section>
+
+	<Section title='Outcomes'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>Entire website is WCAG 2.1 AA compliant.</li>
+			<li>
+				Supports a searchable member list and a managed member map served from the same
+				versioned CSV file.
+			</li>
+			<li>Built and integrated a contact form with Formspree.</li>
+			<li>Implemented a clickable list of features and steps with updated graphics.</li>
+			<li>Added live animations triggered on scroll for key content sections.</li>
+			<li>
+				Achieved 100 scores in performance, accessibility, SEO, and best practices,
+				captured in the Google PageSpeed Insights screenshot.
+			</li>
+		</ul>
+	</Section>
+
+	<Section title='Screenshots'>
+		<ProjectScreenshotGallery
+			screenshots={screenshots}
+			galleryId='specify-software'
+			showFeatureSteps={true}
+		/>
+	</Section>
+</ProjectLayout>

@@ -1,0 +1,99 @@
+---
+import type { ImageMetadata } from 'astro'
+import { Image } from 'astro:assets'
+
+import PageLayout from './BaseLayout.astro'
+import Button from '@/components/Button.astro'
+
+interface Props {
+	title: string
+	description: string
+	coverImage: string
+	coverAlt: string
+	role: string
+	dates: string
+	externalLink?: string
+	externalLabel?: string
+}
+
+const {
+	title,
+	description,
+	coverImage,
+	coverAlt,
+	role,
+	dates,
+	externalLink,
+	externalLabel = 'Visit project'
+} = Astro.props
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/{assets,pages/projects}/**/*.{jpeg,jpg,png,gif,webp}'
+)
+
+if (!images[coverImage]) {
+	throw new Error(
+		`"${coverImage}" does not exist in glob: "/src/{assets,pages/projects}/**/*.{jpeg,jpg,png,gif,webp}"`
+	)
+}
+---
+
+<PageLayout meta={{ title, description }}>
+	<div class='w-full'>
+		<Button title='Back' href='/' style='button'>
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				width='14'
+				height='14'
+				viewBox='0 0 24 24'
+				slot='icon-before'
+			>
+				<path
+					fill='currentColor'
+					d='m6.921 12.5l5.792 5.792L12 19l-7-7l7-7l.713.708L6.921 11.5H19v1z'
+				></path>
+			</svg>
+		</Button>
+
+		<div class='mt-6 grid gap-8 lg:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)]'>
+			<div class='flex flex-col gap-y-5'>
+				<Image
+					src={images[coverImage]()}
+					alt={coverAlt}
+					class='h-72 w-full rounded-2xl border border-border object-cover object-top'
+					loading='eager'
+				/>
+				<div class='space-y-3'>
+					<h1 class='text-2xl font-semibold'>{title}</h1>
+					<p class='text-muted-foreground'>{description}</p>
+				</div>
+			</div>
+
+			<aside class='rounded-2xl border border-border bg-primary-foreground p-5'>
+				<h2 class='text-base font-semibold'>Project details</h2>
+				<dl class='mt-3 space-y-3 text-sm text-muted-foreground'>
+					<div>
+						<dt class='font-medium text-foreground'>Role</dt>
+						<dd>{role}</dd>
+					</div>
+					<div>
+						<dt class='font-medium text-foreground'>Dates</dt>
+						<dd>{dates}</dd>
+					</div>
+					{externalLink && (
+						<div>
+							<dt class='font-medium text-foreground'>Links</dt>
+							<dd>
+								<Button title={externalLabel} href={externalLink} style='pill' />
+							</dd>
+						</div>
+					)}
+				</dl>
+			</aside>
+		</div>
+
+		<div class='mt-8 flex flex-col gap-y-8'>
+			<slot />
+		</div>
+	</div>
+</PageLayout>

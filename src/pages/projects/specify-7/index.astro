@@ -1,0 +1,144 @@
+---
+import type { ImageMetadata } from 'astro'
+
+import ProjectLayout from '@/layouts/ProjectLayout.astro'
+import Section from '@/components/Section.astro'
+import ProjectScreenshotGallery from '@/components/ProjectScreenshotGallery.astro'
+
+const description =
+	'A collections management platform for natural history museums and research collections. 100% open-source and free to use.'
+
+const screenshotModules = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/pages/projects/specify-7/screenshots/*.{png,jpg,jpeg,gif,webp}',
+	{ eager: true }
+)
+
+const screenshotTitleOverrides: Record<string, string> = {
+	homepage: 'Homepage',
+	queryBuilder: 'Query Builder',
+	geoMappedQueryResults: 'Geo-mapped Query Results',
+	dataEntryForms: 'Data Entry Forms',
+	taxonomicTree: 'Taxonomic Tree',
+	attachmentsPage: 'Attachments Page',
+	attachmentZoom: 'Attachment Viewer (Pan and Zoom)',
+	backupDatabaseUtility: 'Database Backup Utility',
+	systemConfigurationTool: 'System Configuration Tool',
+	linkedRecordsButton: 'Linked Records Button',
+	generatedSpecimenLabels: 'Generated Specimen Labels',
+	collectionStatisticsPage: 'Collection Statistics Page'
+}
+
+const screenshotOrder = [
+	'homepage',
+	'queryBuilder',
+	'geoMappedQueryResults',
+	'dataEntryForms',
+	'taxonomicTree',
+	'attachmentsPage',
+	'attachmentZoom',
+	'backupDatabaseUtility',
+	'systemConfigurationTool',
+	'linkedRecordsButton',
+	'generatedSpecimenLabels',
+	'collectionStatisticsPage'
+]
+
+const screenshots = Object.entries(screenshotModules)
+	.map(([path, module]) => {
+		const filename = path.split('/').pop()?.replace(/\.[^/.]+$/, '') ?? ''
+		const title =
+			screenshotTitleOverrides[filename] ||
+			filename
+				.replace(/([A-Z])/g, ' $1')
+				.replace(/[-_]+/g, ' ')
+				.replace(/^./, (char) => char.toUpperCase())
+
+		return {
+			filename,
+			title,
+			image: module.default
+		}
+	})
+	.sort((a, b) => {
+		const aIndex = screenshotOrder.indexOf(a.filename)
+		const bIndex = screenshotOrder.indexOf(b.filename)
+		const safeA = aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex
+		const safeB = bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex
+		return safeA - safeB
+	})
+---
+
+<ProjectLayout
+	title='Specify 7'
+	description={description}
+	coverImage='/src/pages/projects/specify-7/screenshots/homepage.png'
+	coverAlt='Specify 7 interface preview'
+	role='Technical Support Manager; product requirements, implementation advising, and documentation lead'
+	dates='Late 2021 - Present'
+	externalLink='https://sp7demofish.specifycloud.org/'
+	externalLabel='Open demo'
+>
+	<Section title='Overview'>
+		<p class='text-muted-foreground'>
+			Specify 7 is a modern collections management platform for natural history and
+			earth science institutions. I play a central role in gathering user
+			requirements, collaborating with developers on implementation decisions,
+			and delivering release communication and documentation for each update.
+		</p>
+	</Section>
+	<Section title='Major Capabilities Highlighted'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>Advanced query builder workflows with geo-mapped query outputs.</li>
+			<li>Configurable data-entry forms, taxonomy workflows, and specimen-label generation.</li>
+			<li>Attachment management with an upgraded viewer experience.</li>
+			<li>Built-in backup utility and administrative configuration tooling.</li>
+			<li>Linked-record visibility and collection-level statistics for safer edits and analysis.</li>
+		</ul>
+	</Section>
+	<Section title='My Contributions'>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>Revamped the attachment viewer with pan and zoom support.</li>
+			<li>
+				Built the in-app database backup utility, including automatic health checks
+				and compression.
+			</li>
+			<li>
+				Delivered the System Config tool for institutional hierarchy configuration,
+				including a D3 visualization for database structure.
+			</li>
+			<li>
+				Contributed backend Django migrations to resolve data migration issues and
+				improve upgrade reliability.
+			</li>
+			<li>Added timestamp support in queries.</li>
+			<li>Defined defaults for forms, database schema, and related workflows.</li>
+			<li>Added proper UI time-zone support for notifications and user actions.</li>
+			<li>Assisted in UI/UX design and implementation decisions across features.</li>
+			<li>
+				Added a linked-records button so users can see how many records are affected
+				before committing changes.
+			</li>
+			<li>
+				Wrote requirements for all new features since 2023 and partnered closely with
+				developers through implementation.
+			</li>
+			<li>
+				Write release notes and documentation for every update, published on the
+				Speciforum.
+			</li>
+		</ul>
+		<p class='text-muted-foreground'>
+			See the related community and documentation work on
+			<a href='/projects/specify-community-forum/' class='font-medium text-foreground underline underline-offset-4'>
+				the Specify Community Forum project page
+			</a>.
+		</p>
+	</Section>
+	<Section title='Screenshots'>
+		<ProjectScreenshotGallery
+			screenshots={screenshots}
+			galleryId='specify-7'
+			showFeatureSteps={true}
+		/>
+	</Section>
+</ProjectLayout>
