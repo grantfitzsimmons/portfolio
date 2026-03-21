@@ -23,14 +23,6 @@ export const projectCards: ProjectCardItem[] = [
 		altText: 'Specify Collections Consortium website'
 	},
 	{
-		href: '/projects/ready-rental/',
-		heading: 'Ready Rental Website',
-		subheading:
-			'Built with Squarespace as web builder and architect. Developed pipelines for rental requests, scheduling, and contact forms. Integrated with Google Workspace for email and calendar management.',
-		imagePath: '/src/assets/projects/ready-rental/screenshots/homepage.png',
-		altText: 'Ready Rental website homepage'
-	},
-	{
 		href: '/projects/geo-specify/',
 		heading: 'GeoSpecify',
 		subheading:
@@ -45,6 +37,14 @@ export const projectCards: ProjectCardItem[] = [
 			'Established and maintain the Specify Community Forum, a platform for Specify users to collaborate, discuss, and read documentation.',
 		imagePath: '/src/assets/speciforum.png',
 		altText: 'Speciforum'
+	},
+	{
+		href: '/projects/ready-rental/',
+		heading: 'Ready Rental Website',
+		subheading:
+			'Built with Squarespace as web builder and architect. Developed pipelines for rental requests, scheduling, and contact forms. Integrated with Google Workspace for email and calendar management.',
+		imagePath: '/src/assets/projects/ready-rental/screenshots/homepage.png',
+		altText: 'Ready Rental website homepage'
 	},
 	{
 		href: '/projects/system-admin-docs/',
