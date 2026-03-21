@@ -14,15 +14,17 @@ const {
 	altText,
 	imageClass
 } = Astro.props
-const images = import.meta.glob('/src/assets/*.{jpeg,jpg,png,gif,webp}', {
+const images = import.meta.glob('/src/assets/*.{jpeg,jpg,png,gif,webp,svg}', {
 	eager: true,
 	import: 'default'
-}) as Record<string, ImageMetadata>
+}) as Record<string, ImageMetadata | string>
 
 if (imagePath) {
 	if (!images[imagePath])
-		throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif,webp}"`)
+		throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif,webp,svg}"`)
 }
+
+const imageSrc = imagePath ? images[imagePath] : undefined
 ---
 
 <Tag
@@ -34,14 +36,22 @@ if (imagePath) {
 	href={href}
 >
 	{
-		imagePath && (
-			<Image
-				src={images[imagePath]}
-				alt={altText}
-				class={cn('mb-3 md:absolute md:mb-0', imageClass)}
-				loading='lazy'
-			/>
-		)
+		imageSrc &&
+			(typeof imageSrc === 'string' ? (
+				<img
+					src={imageSrc}
+					alt={altText}
+					class={cn('mb-3 md:absolute md:mb-0', imageClass)}
+					loading='lazy'
+				/>
+			) : (
+				<Image
+					src={imageSrc}
+					alt={altText}
+					class={cn('mb-3 md:absolute md:mb-0', imageClass)}
+					loading='lazy'
+				/>
+			))
 	}
 	<div class='flex flex-col gap-y-1.5'>
 		<div class='flex flex-col gap-y-0.5'>
