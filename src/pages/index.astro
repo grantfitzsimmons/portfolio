@@ -14,7 +14,7 @@ import { projectCards } from '../data/projects'
 
 // const languages = ['SQL', 'Python', 'JavaScript', 'React', 'Astro', 'HTML', 'CSS']
 const technologies = ['Git', 'GitHub', 'Docker', 'AWS (EC2, RDS, S3)', 'Cloudflare (DNS, WAF, Workers)', 'MySQL', 'MariaDB', 'CI/CD Pipelines', 'Discourse', 'Asana', 'Notion', 'Tailscale', 'Linux', 'macOS', 'Windows']
-const specialties = ['Biodiversity Informatics','Data Management','Project Management', 'Customer Success', 'Database Management', 'Cloud Infrastructure Administration', 'Technical Documentation', 'Data Migration and Integration', 'International Collaboration', 'Business Administration']
+const specialties = ['Biodiversity Informatics','Product Management','Data Management','Project Management', 'Customer Success', 'Database Management', 'Cloud Infrastructure Administration', 'Technical Documentation', 'Data Migration and Integration', 'International Collaboration', 'Geoscience Informatics', 'Business Administration']
 // const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
 
 const MAX_POSTS = 5
@@ -240,31 +240,90 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 
 		<Section title='Experience'>
 			<Card
-				heading='Product and Technical Support Manager'
+				heading='Assistant Director'
 				subheading='Specify Collections Consortium, University of Kansas'
-				date='May 2023 - Present'
+				date='March 2026 - Present'
 				imagePath='/src/assets/scc2026.svg'
 				altText='Specify Collections Consortium'
 				imageClass='h-12 w-auto md:-left-16'
 			>
 			<ul class='ml-4 list-disc text-muted-foreground'>
 				<li>
-					<u>Strategic Leadership:</u> Serve as the functional product lead and subject matter expert for the Specify Collections Consortium (SCC), a global software initiative for biological and earth science research collections. Translate complex user feedback into technical software requirements and define the strategic roadmap for platform development.
+					<u>Strategic Leadership:</u> Partner with SCC Director Aimee Stewart to set consortium direction and ensure long-term sustainability for the Specify platform and member services.
 				</li>
 				<li>
-					<u>Operational Management:</u> Oversee internal operations for the support and documentation units. Establish and monitor Key Performance Indicators (KPIs) and metrics to evaluate operational effectiveness and service quality.
+					<u>Product & Platform Strategy:</u> Guide the product roadmap and prioritize improvements to meet the evolving needs of our global user community.
 				</li>
 				<li>
-					<u>Supervision:</u> Recruit, train, and supervise student support staff. Direct the daily workflows of support personnel to ensure responsive technical assistance for over 450 member collections across 22 countries in 6 continents.
+					<u>Operations & Support:</u> Oversee day-to-day operations and enhance support services to maintain high-quality assistance for member collections.
 				</li>
 				<li>
-					<u>International Partnerships:</u> Cultivate strategic relationships with international collaborators, including the Swiss Academy of Sciences and the Global Biodiversity Information Facility (GBIF), to orchestrate joint ventures and software integrations.
+					<u>Partnerships & Collaboration:</u> Strengthen international collaborations and integrations with partners such as GBIF, iDigBio, CSIRO, and SwissCollNet to expand data mobilization.
 				</li>
 				<li>
-					<u>Software Engineering:</u> Contribute directly to the codebase with over 1,700 commits to SCC repositories since 2024. Lead Quality Assurance (QA) and User Experience (UX) testing to ensure software reliability and usability.
+					<u>Team & Program Management:</u> Recruit, mentor, and supervise staff; establish KPIs and processes to monitor program impact and operational effectiveness.
 				</li>
 				<li>
-					<u>Infrastructure Administration:</u> Architect and maintain cloud infrastructure on AWS (EC2, RDS, S3), ensuring high availability for mission-critical member portals and data hosting services.
+					<u>Community Advocacy:</u> Advocate for digitization, data management, and mobilization across the biodiversity and geoscience communities.
+				</li>
+			</ul>
+			</Card>
+
+			<Card
+				heading='Technical Product Manager'
+				subheading='Specify Collections Consortium, University of Kansas'
+				date='November 2025 - March 2026'
+				imagePath='/src/assets/scc2026.svg'
+				altText='Specify Collections Consortium'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+			<ul class='ml-4 list-disc text-muted-foreground'>
+				<li>
+					<u>Product Strategy & Roadmap:</u> Define and execute the strategic product roadmap for the Specify platform, serving 450+ member collections across 22 countries. Translate complex user feedback from global research institutions into prioritized technical requirements, driving platform evolution for biological and geoscience collections.
+				</li>
+				<li>
+					<u>Revenue & Pricing Strategy:</u> Co-led the restructuring of Consortium membership levels and pricing tiers to align with operational costs, global market demands, and institutional budgets. Conducted formal cost assessments and financial forecasting for support, development, and cloud infrastructure.
+				</li>
+				<li>
+					<u>GeoSpecify Initiative Lead:</u> Serve as KU lead for the GeoSpecify project, extending Specify for geoscience collections. Conducted stakeholder interviews with 30+ institutions, compiled default taxonomic trees for minerals/rocks/meteorites, and presented findings at the European Mineralogical Conference (Dublin, 2024).
+				</li>
+				<li>
+					<u>International Partnerships:</u> Cultivate strategic relationships with collaborators including the Swiss Academy of Sciences (SwissCollNet), GBIF, iDigBio, CSIRO, and the Canadian Forest Service to orchestrate joint ventures, software integrations, and global data publishing pipelines.
+				</li>
+				<li>
+					<u>Operational Management & KPIs:</u> Oversee internal operations for support and documentation units. Establish and monitor KPIs and metrics to evaluate operational effectiveness, service quality, and team performance.
+				</li>
+				<li>
+					<u>Team Leadership:</u> Recruit, train, and supervise student support staff. Direct daily workflows to ensure responsive technical assistance across 6 continents.
+				</li>
+			</ul>
+			</Card>
+			<Card
+				heading='Product and Technical Support Manager'
+				subheading='Specify Collections Consortium, University of Kansas'
+				date='May 2023 - November 2025'
+				imagePath='/src/assets/scc2026.svg'
+				altText='Specify Collections Consortium'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+			<ul class='ml-4 list-disc text-muted-foreground'>
+				<li>
+					<u>Product Leadership:</u> Served as functional product lead and subject matter expert for the SCC. Translated complex user feedback into technical software requirements and defined the strategic roadmap for platform development.
+				</li>
+				<li>
+					<u>Engineering & QA:</u> Contributed over 1,700 commits to SCC repositories since 2024 (ranked #6 contributor to specify7). Led Quality Assurance and User Experience testing to ensure software reliability and usability. Adopted agile methodologies to improve team efficiency.
+				</li>
+				<li>
+					<u>Cloud Infrastructure:</u> Architected and maintained AWS cloud infrastructure (EC2, RDS, S3) ensuring high availability for mission-critical member portals. Implemented cost optimizations reducing annual database server costs by over 60%.
+				</li>
+				<li>
+					<u>Strategic Pricing:</u> Co-led restructuring of Consortium membership levels and pricing tiers to align with operational costs, global market demands, and institutional budgets.
+				</li>
+				<li>
+					<u>Process Improvement:</u> Partnered with the lead software engineer to bridge technical development and user support. Jointly established new internal development processes using staged milestones to align software with community needs.
+				</li>
+				<li>
+					<u>Team Supervision:</u> Recruited, trained, and supervised student support staff. Directed daily workflows to ensure responsive technical assistance for over 450 member collections across 22 countries.
 				</li>
 			</ul>
 			</Card>
@@ -351,11 +410,11 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 			/> -->
 		</Section>
 
-		<!-- <Section title='Publications & Presentations'>
+		<Section title='Publications'>
 			<Card
 				as='a'
 				heading='Digitization Planning for Large Collections and Agencies with Specify 7'
-				subheading='https://doi.org/10.3897/biss.8.133987'
+				subheading='Biodiversity Information Science and Standards, 2024 — DOI: 10.3897/biss.8.133987'
 				imagePath='/src/assets/biss_logo.png'
 				altText='Digitization Planning for Large Collections and Agencies with Specify 7'
 				imageClass='h-11 w-auto md:-left-16'
@@ -364,12 +423,12 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 			<Card
 				as='a'
 				heading='Extending Specify 7 for Geoscience Collections'
-				subheading='https://doi.org/10.3897/biss.8.141673'
+				subheading='Biodiversity Information Science and Standards, 2024 — DOI: 10.3897/biss.8.141673'
 				altText='Extending Specify 7 for Geoscience Collections'
 				imageClass='h-11 w-auto md:-left-16'
-				href='https://scholar.google.com/citations?view_op=view_citation&hl=en&user=InB8u9gAAAAJ&citation_for_view=InB8u9gAAAAJ:u5HHmVD_uO8C'
+				href='https://doi.org/10.3897/biss.8.141673'
 			/>
-		</Section> -->
+		</Section>
 
 		<Section title='Conference Presentations'>
 			<div class='space-y-4 text-muted-foreground'>
