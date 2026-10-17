@@ -7,7 +7,8 @@ export const siteConfig: SiteConfig = {
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: 'Grant Fitzsimmons',
 	// Meta property used as the default description meta property
-	description: 'Grant Fitzsimmons Portfolio',
+	description:
+		'Grant Fitzsimmons is an assistant director and product leader advancing biodiversity informatics, natural-history collections technology, and international research partnerships.',
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: 'en-US',
 	// Meta property, found in src/components/BaseHead.astro L:42

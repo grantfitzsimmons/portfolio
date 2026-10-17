@@ -13,8 +13,8 @@ import { getAllPosts, sortMDByDate } from '@/utils'
 import { projectCards } from '../data/projects'
 
 // const languages = ['SQL', 'Python', 'JavaScript', 'React', 'Astro', 'HTML', 'CSS']
-const technologies = ['Git', 'GitHub', 'Docker', 'AWS (EC2, RDS, S3)', 'Cloudflare (DNS, WAF, Workers)', 'MySQL', 'MariaDB', 'CI/CD Pipelines', 'Discourse', 'Asana', 'Notion', 'Tailscale', 'Linux', 'macOS', 'Windows']
-const specialties = ['Biodiversity Informatics','Product Management','Data Management','Project Management', 'Customer Success', 'Database Management', 'Cloud Infrastructure Administration', 'Technical Documentation', 'Data Migration and Integration', 'International Collaboration', 'Geoscience Informatics', 'Business Administration']
+const technologies = ['Python', 'JavaScript', 'React', 'SQL', 'HTML/CSS', 'Git', 'GitHub', 'Docker', 'AWS (EC2, RDS, S3)', 'DigitalOcean', 'Cloudflare', 'MySQL', 'MariaDB', 'CI/CD Pipelines', 'Discourse', 'Asana', 'ZenHub', 'Power BI', 'Google Analytics']
+const specialties = ['Biodiversity Informatics', 'Product Strategy', 'Roadmap Planning', 'Program Management', 'Data Management', 'Stakeholder Communication', 'International Partnerships', 'Team Leadership', 'Customer Success', 'Cloud Infrastructure', 'Technical Documentation', 'Data Migration and Integration', 'Geoscience Informatics', 'Business Administration']
 // const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
 
 const MAX_POSTS = 5
@@ -33,9 +33,12 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 			/>
 
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>Hi, I'm Grant.</h1>
+				<div class='text-center'>
+					<h1 class='text-3xl font-bold'>Hi, I’m Grant.</h1>
+					<p class='mt-2 text-base text-muted-foreground'>Assistant Director · Product Leader · Biodiversity Informatician</p>
+				</div>
 				<a
-					href='mailto:contact@grantfitzsimmons.com'
+					href='mailto:me@grantfitzsimmons.com'
 					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
 				>
 					<p class='font-medium'>Send me a message!</p>
@@ -95,10 +98,14 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 		</section>
 
 		<Section title='About'>
-			<p class='text-muted-foreground'>
-				<p>I love working with people and technology.</p>
-				<p>I enjoy learning new things and building meaningful connections while contributing to scientific initiatives and research. I am an avid traveler who loves visiting new places and immersing myself in different cultures. In my free time, I enjoy learning new skills, going for long walks, reading, writing, and spending time with family and friends.</p>
-			</p>
+			<div class='space-y-3 text-muted-foreground'>
+				<p>
+					I’m an assistant director and product leader with more than five years of experience advancing biodiversity informatics and natural-history collections technology. At the Specify Collections Consortium, I help lead strategy, operations, product development, and international partnerships for a collections management platform serving more than 500 member collections across 25 countries.
+				</p>
+				<p>
+					I translate the needs of curators and researchers into product roadmaps, scalable support programs, and cross-institutional initiatives.
+				</p>
+			</div>
 		</Section>
 		{
 			allPostsByDate.length > 0 && (
@@ -279,22 +286,22 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 			>
 			<ul class='ml-4 list-disc text-muted-foreground'>
 				<li>
-					<u>Product Strategy & Roadmap:</u> Define and execute the strategic product roadmap for the Specify platform, serving 450+ member collections across 22 countries. Translate complex user feedback from global research institutions into prioritized technical requirements, driving platform evolution for biological and geoscience collections.
+					<u>Product Strategy & Roadmap:</u> Defined and executed the strategic product roadmap for the Specify platform, serving 450+ member collections across 25 countries. Translated complex user feedback from global research institutions into prioritized technical requirements, driving platform evolution for biological and geoscience collections.
 				</li>
 				<li>
 					<u>Revenue & Pricing Strategy:</u> Co-led the restructuring of Consortium membership levels and pricing tiers to align with operational costs, global market demands, and institutional budgets. Conducted formal cost assessments and financial forecasting for support, development, and cloud infrastructure.
 				</li>
 				<li>
-					<u>GeoSpecify Initiative Lead:</u> Serve as KU lead for the GeoSpecify project, extending Specify for geoscience collections. Conducted stakeholder interviews with 30+ institutions, compiled default taxonomic trees for minerals/rocks/meteorites, and presented findings at the European Mineralogical Conference (Dublin, 2024).
+					<u>GeoSpecify Initiative Lead:</u> Served as KU lead for the GeoSpecify project, extending Specify for geoscience collections. Conducted stakeholder interviews with 30+ institutions, compiled default taxonomic trees for minerals, rocks, and meteorites, and presented findings at the European Mineralogical Conference in 2024.
 				</li>
 				<li>
-					<u>International Partnerships:</u> Cultivate strategic relationships with collaborators including the Swiss Academy of Sciences (SwissCollNet), GBIF, iDigBio, CSIRO, and the Canadian Forest Service to orchestrate joint ventures, software integrations, and global data publishing pipelines.
+					<u>International Partnerships:</u> Cultivated strategic relationships with collaborators including the Swiss Academy of Sciences (SwissCollNet), GBIF, iDigBio, CSIRO, and the Canadian Forest Service to orchestrate joint ventures, software integrations, and global data publishing pipelines.
 				</li>
 				<li>
-					<u>Operational Management & KPIs:</u> Oversee internal operations for support and documentation units. Establish and monitor KPIs and metrics to evaluate operational effectiveness, service quality, and team performance.
+					<u>Operational Management & KPIs:</u> Oversaw internal operations for support and documentation units. Established and monitored KPIs and metrics to evaluate operational effectiveness, service quality, and team performance.
 				</li>
 				<li>
-					<u>Team Leadership:</u> Recruit, train, and supervise student support staff. Direct daily workflows to ensure responsive technical assistance across 6 continents.
+					<u>Team Leadership:</u> Recruited, trained, and supervised student support staff. Directed daily workflows to ensure responsive technical assistance across six continents.
 				</li>
 			</ul>
 			</Card>
@@ -323,7 +330,7 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 					<u>Process Improvement:</u> Partnered with the lead software engineer to bridge technical development and user support. Jointly established new internal development processes using staged milestones to align software with community needs.
 				</li>
 				<li>
-					<u>Team Supervision:</u> Recruited, trained, and supervised student support staff. Directed daily workflows to ensure responsive technical assistance for over 450 member collections across 22 countries.
+					<u>Team Supervision:</u> Recruited, trained, and supervised student support staff. Directed daily workflows to ensure responsive technical assistance for over 500 member collections across 25 countries.
 				</li>
 			</ul>
 			</Card>
@@ -387,17 +394,23 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 		<Section title='Education'>
 			<Card
 				heading='University of Kansas School of Business'
-				subheading='BS, Business Administration, Information Systems'
-				date='Aug 2019 - May 2023'
+				subheading='Master of Business Administration'
+				date='Present'
 				imagePath='/src/assets/jayhawk.png'
-				altText='Lorem, ipsum dolor sit'
+				altText='University of Kansas Jayhawk'
+				imageClass='h-12 w-auto md:-left-16'
+			/>
+			<Card
+				heading='University of Kansas School of Business'
+				subheading='BS, Business Administration; Minor in Information Systems'
+				date='May 2023'
+				imagePath='/src/assets/jayhawk.png'
+				altText='University of Kansas Jayhawk'
 				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						3.95/4.0 GPA, honor roll
-						<li>Studied abroad in Paderno del Grappa, Italy (<a class="text-blue-500" href="https://www.cimbaitaly.com/">CIMBA</a>)						</li>
-					</li>
+					<li>3.95/4.0 GPA; University of Kansas Honor Roll</li>
+					<li>Studied cross-cultural management and international business systems in Paderno del Grappa, Italy (<a class="text-blue-500" href="https://www.cimbaitaly.com/">CIMBA</a>).</li>
 				</ul>
 			</Card>
 			<!-- <Card
@@ -408,6 +421,39 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			/> -->
+		</Section>
+
+		<Section title='Strategic Initiatives'>
+			<Card
+				heading='UniMus:Natur Consortium Acquisition'
+				subheading='Strategic Development & Market Expansion Lead (KU)'
+				date='2025'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>Led technical procurement and evaluation work with Norway’s five largest universities, delivering product environments, technical due diligence, and an on-site migration workshop.</li>
+					<li>Helped establish a national consortium agreement that expanded Specify’s presence in the Norwegian research community.</li>
+				</ul>
+			</Card>
+			<Card
+				heading='GeoSpecify'
+				subheading='Lead Project Coordinator (KU)'
+				date='2023 - 2025'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>Directed a multi-institutional initiative with Swiss natural-history museums to extend Specify for geological and mineralogical collections.</li>
+					<li>Led requirements gathering, information-model design, and cross-functional delivery for the public release in late 2025.</li>
+				</ul>
+			</Card>
+		</Section>
+
+		<Section title='Professional Development'>
+			<Card
+				heading='Aspiring Leaders Program'
+				subheading='University of Kansas Human Resources'
+				date='January 2025 - June 2025'
+			>
+				<p class='text-muted-foreground'>Completed a competitive six-month leadership intensive focused on conflict resolution, professional communication, team management, and cross-departmental collaboration.</p>
+			</Card>
 		</Section>
 
 		<Section title='Publications'>
@@ -442,6 +488,9 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 						<li>"Extending Specify 7 for Geoscience Collections" - SPNHC, Okinawa, Japan (September 2024)</li>
 						<li>"Publishing Your Data with Specify 7" - SPNHC, Lawrence, KS (May 2025)</li>
 						<li>"Specify Spotlight: Improving Data Digitization and Management" - SPNHC, Lawrence, KS (May 2025)</li>
+						<li>"Supporting Collaboration with Specify 7" - SPNHC, Cape Town, South Africa (September 2026)</li>
+						<li>"Specify Collections Consortium: Transiting to Sustainability" - SPNHC, Cape Town, South Africa (September 2026)</li>
+						<li>"Meeting Biodiversity Standards with Specify 7" - TDWG, Oslo, Norway (September 2026)</li>
 					</ul>
 				</div>
 				<div>
@@ -451,7 +500,10 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 						<li>Pacific Forestry Centre, Canadian Forest Service - Victoria, BC, Canada (February 2024)</li>
 						<li>Western Australia Herbarium, DBCA - Perth, Australia (September 2024)</li>
 						<li>University of Kansas, SPNHC - Lawrence, KS (May 2025)</li>
+						<li>Florida Museum of Natural History, University of Florida - Gainesville, FL (October 2025)</li>
 						<li>CSIC-MNCN, CETAF-DEST course - Madrid, Spain (December 2025)</li>
+						<li>SwissCollNet, Palais de Rumine - Lausanne, Switzerland (June 2026)</li>
+						<li>UniMus:Natur consortium users, University of Oslo - Oslo, Norway (September 2026)</li>
 					</ul>
 				</div>
 				<div>
@@ -460,10 +512,32 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 						<li>"Digital Data Standards in Biodiversity" - BioDigiCon (2023)</li>
 						<li>"Introduction to Digitization of Biodiversity Specimens" - iDigBio Digitization Academy (2023, 2024, 2025)</li>
 						<li>"Linking People and Specimens" - Bionomia Workshop (2024)</li>
+						<li>Symposium host, "Meeting Biodiversity Data Standards Using Specify Software" - TDWG, Oslo, Norway (September 2026)</li>
 						<li>Community Data Standards Groups - GBIF and TDWG meetings</li>
 					</ul>
 				</div>
 			</div>
+		</Section>
+
+		<Section title='Leadership & Service'>
+			<Card
+				heading='Specify Community Forum'
+				subheading='Founder & Lead Administrator'
+				date='2022 - Present'
+			>
+				<p class='text-muted-foreground'>Founded the consortium’s primary global support and community hub, authoring more than 750 posts and creating 500+ knowledge-base topics.</p>
+			</Card>
+			<Card
+				heading='Teaching, Mentoring & Training'
+				subheading='Specify Collections Consortium and University of Kansas'
+				date='2022 - Present'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>Mentored more than a dozen undergraduate students and developed hundreds of onboarding and training articles.</li>
+					<li>Designed and delivered multi-day technical workshops for more than 200 researchers worldwide.</li>
+					<li>Serve as staff liaison to the SCC Board of Members and advisory committees.</li>
+				</ul>
+			</Card>
 		</Section>
 
 		<!-- <Section title='Certifications'>
