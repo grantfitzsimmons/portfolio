@@ -1,0 +1,307 @@
+<link rel='stylesheet' href='/vendor/leaflet/leaflet.css' />
+
+<div class='space-y-3'>
+	<div class='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
+		<div>
+			<p class='text-sm text-muted-foreground'>Just some places I've been for longer than a layover! Only the most interesting ones.</p>
+		</div>
+		<div class='flex gap-5 text-sm'>
+			<div>
+				<span class='block text-xl font-semibold text-foreground' data-travel-total>—</span>
+				<span class='text-muted-foreground'>places</span>
+			</div>
+			<div>
+				<span class='block text-xl font-semibold text-foreground' data-travel-countries>—</span>
+				<span class='text-muted-foreground'>countries</span>
+			</div>
+		</div>
+	</div>
+
+	<div class='relative overflow-hidden rounded-2xl border border-border bg-muted'>
+		<div
+			id='travel-map'
+			class='travel-map h-[430px] w-full sm:h-[520px]'
+			role='region'
+			aria-label='Interactive map of places Grant Fitzsimmons has traveled'
+		></div>
+		<div
+			class='pointer-events-none absolute bottom-7 left-3 z-[500] flex items-center gap-3 rounded-lg border border-border bg-background/90 px-3 py-2 text-xs shadow-sm backdrop-blur'
+		>
+			<span class='inline-flex items-center gap-1.5'>
+				<span class='flex -space-x-1' aria-hidden='true'>
+					<span class='h-2.5 w-2.5 rounded-full bg-emerald-600 ring-1 ring-background'></span>
+					<span class='h-2.5 w-2.5 rounded-full bg-blue-600 ring-1 ring-background'></span>
+					<span class='h-2.5 w-2.5 rounded-full bg-red-600 ring-1 ring-background'></span>
+				</span>
+				Countries
+			</span>
+			<span class='hidden items-center gap-1.5' data-want-legend><span class='h-2.5 w-2.5 rounded-full bg-amber-500'></span> Want to go</span>
+		</div>
+	</div>
+
+	<noscript>
+		<p class='text-sm text-muted-foreground'>JavaScript is required for the interactive map. <a class='underline' href='/data/travel.csv'>View the travel data as CSV.</a></p>
+	</noscript>
+</div>
+
+<script
+	is:inline
+	src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
+	integrity='sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo='
+	crossorigin=''
+></script>
+<script>
+	type TravelPlace = {
+		status: 'visited' | 'want'
+		continent: string
+		country: string
+		region: string
+		place: string
+		latitude: number
+		longitude: number
+		visits: string[]
+	}
+
+	const mapElement = document.getElementById('travel-map')
+
+	if (mapElement && !mapElement.dataset.initialized) {
+		mapElement.dataset.initialized = 'true'
+		initializeTravelMap(mapElement)
+	}
+
+	async function initializeTravelMap(container: HTMLElement) {
+		const totalElement = document.querySelector<HTMLElement>('[data-travel-total]')
+		const countriesElement = document.querySelector<HTMLElement>('[data-travel-countries]')
+		const wantLegend = document.querySelector<HTMLElement>('[data-want-legend]')
+		const L = (window as any).L
+
+		if (!L) {
+			return
+		}
+
+		try {
+			const response = await fetch('/data/travel.csv')
+			if (!response.ok) throw new Error(`Travel data returned ${response.status}`)
+			const places = parseTravelCsv(await response.text())
+			const visitedPlaces = places.filter((place) => place.status === 'visited')
+			const countries = new Set(visitedPlaces.map((place) => place.country))
+
+			if (totalElement) totalElement.textContent = visitedPlaces.length.toString()
+			if (countriesElement) countriesElement.textContent = countries.size.toString()
+			if (wantLegend && places.some((place) => place.status === 'want')) {
+				wantLegend.classList.remove('hidden')
+				wantLegend.classList.add('inline-flex')
+			}
+
+			const map = L.map(container, {
+				minZoom: 2,
+				worldCopyJump: true,
+				scrollWheelZoom: false
+			})
+
+			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 19,
+				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			}).addTo(map)
+
+			const layer = L.layerGroup().addTo(map)
+			const countryColors = createCountryColors(places)
+			const bounds: Array<[number, number]> = []
+
+			places.forEach((place) => {
+				const color = place.status === 'want' ? '#d97706' : countryColors.get(place.country) ?? '#059669'
+				const marker = L.circleMarker([place.latitude, place.longitude], {
+					radius: 6,
+					color: '#ffffff',
+					weight: 2,
+					fillColor: color,
+					fillOpacity: 0.92
+				})
+				marker.bindPopup(buildPopup(place, color), { maxWidth: 240 })
+				marker.bindTooltip(place.place, { direction: 'top', offset: [0, -7] })
+				marker.addTo(layer)
+				bounds.push([place.latitude, place.longitude])
+			})
+
+			if (bounds.length > 1) map.fitBounds(bounds, { padding: [28, 28], maxZoom: 6 })
+			else if (bounds.length === 1) map.setView(bounds[0], 8)
+
+		} catch (error) {
+			console.error(error)
+		}
+	}
+
+	function parseTravelCsv(csv: string): TravelPlace[] {
+		const [headerLine, ...rows] = csv.trim().split(/\r?\n/)
+		const headers = headerLine.split(',')
+
+		return rows.filter(Boolean).map((row) => {
+			const values = row.split(',')
+			const record = Object.fromEntries(headers.map((header, index) => [header, values[index] ?? '']))
+			return {
+				status: record.status === 'want' ? 'want' : 'visited',
+				continent: record.continent,
+				country: record.country,
+				region: record.region,
+				place: record.place,
+				latitude: Number(record.latitude),
+				longitude: Number(record.longitude),
+				visits: record.visits ? record.visits.split('|') : []
+			}
+		})
+	}
+
+	function createCountryColors(places: TravelPlace[]) {
+		const palette = [
+			'#059669', '#2563eb', '#dc2626', '#7c3aed', '#ea580c', '#0891b2', '#be123c',
+			'#4d7c0f', '#9333ea', '#0369a1', '#c2410c', '#0f766e', '#b91c1c', '#4338ca',
+			'#a16207', '#047857'
+		]
+		const countries = [...new Set(places.map((place) => place.country))].sort()
+		return new Map(countries.map((country, index) => [country, palette[index % palette.length]]))
+	}
+
+	function buildPopup(place: TravelPlace, color: string) {
+		const visits = place.visits.length
+			? `<ul class="travel-popup-dates">${place.visits.map((visit) => `<li>${escapeHtml(visit)}</li>`).join('')}</ul>`
+			: ''
+		return `
+			<div class="travel-popup">
+				<p class="travel-popup-status">${place.status === 'want' ? 'Want to go' : 'Visited'}</p>
+				<h3>${escapeHtml(place.place)}</h3>
+				<p class="travel-popup-location"><span class="travel-popup-country" style="background:${color}"></span>${escapeHtml([place.region, place.country].filter(Boolean).join(', '))}</p>
+				${visits}
+			</div>`
+	}
+
+	function escapeHtml(value: string) {
+		return value.replace(/[&<>'"]/g, (character) => ({
+			'&': '&amp;',
+			'<': '&lt;',
+			'>': '&gt;',
+			"'": '&#039;',
+			'"': '&quot;'
+		})[character] ?? character)
+	}
+</script>
+
+<style is:global>
+	.travel-map {
+		font-family: inherit;
+	}
+
+	.travel-map .leaflet-control-zoom a {
+		color: hsl(var(--foreground));
+		background: hsl(var(--background) / 0.92);
+		border-color: hsl(var(--border));
+	}
+
+	.travel-map .leaflet-control-attribution {
+		background: hsl(var(--background) / 0.86);
+		color: hsl(var(--muted-foreground));
+	}
+
+	.travel-map .leaflet-control-attribution a {
+		color: hsl(var(--foreground));
+	}
+
+	.travel-map .leaflet-popup-content-wrapper,
+	.travel-map .leaflet-popup-tip {
+		background: hsl(var(--background));
+		color: hsl(var(--foreground));
+	}
+
+	.travel-map .leaflet-popup-content-wrapper {
+		border: 1px solid hsl(var(--border));
+		border-radius: 0.75rem;
+		box-shadow: 0 8px 24px rgb(0 0 0 / 0.14);
+	}
+
+	.travel-map .leaflet-popup-content {
+		margin: 0;
+		min-width: 160px;
+	}
+
+	.travel-popup {
+		padding: 0.75rem;
+	}
+
+	.travel-popup-status {
+		margin: 0 0 0.15rem;
+		color: #059669;
+		font-size: 0.625rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.travel-popup h3 {
+		margin: 0;
+		font-size: 0.95rem;
+		font-weight: 650;
+	}
+
+	.travel-popup-location,
+	.travel-popup-empty {
+		margin: 0.15rem 0 0;
+		color: hsl(var(--muted-foreground));
+		font-size: 0.75rem;
+	}
+
+	.travel-popup-location {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
+
+	.travel-popup-country {
+		display: inline-block;
+		width: 0.35rem;
+		height: 0.35rem;
+		flex: 0 0 auto;
+		border-radius: 9999px;
+	}
+
+	.travel-popup-dates {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3rem;
+		margin: 0.55rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.travel-popup-dates li {
+		border: 1px solid hsl(var(--border));
+		border-radius: 9999px;
+		background: hsl(var(--muted) / 0.65);
+		padding: 0.1rem 0.4rem;
+		font-size: 0.675rem;
+	}
+
+	.travel-map.leaflet-container a.leaflet-popup-close-button {
+		top: 0.35rem;
+		right: 0.35rem;
+		width: 1.65rem;
+		height: 1.65rem;
+		border-radius: 9999px;
+		color: hsl(var(--muted-foreground));
+		font-size: 1.2rem;
+		line-height: 1.55rem;
+	}
+
+	.travel-map.leaflet-container a.leaflet-popup-close-button:hover {
+		background: hsl(var(--muted));
+		color: hsl(var(--foreground));
+	}
+
+	.travel-map .leaflet-tooltip {
+		border: 1px solid hsl(var(--border));
+		border-radius: 0.5rem;
+		background: hsl(var(--background));
+		color: hsl(var(--foreground));
+		box-shadow: 0 4px 12px rgb(0 0 0 / 0.12);
+		font-family: inherit;
+		font-size: 0.75rem;
+	}
+</style>

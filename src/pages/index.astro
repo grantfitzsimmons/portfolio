@@ -5,6 +5,7 @@ import Card from '../components/Card.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
+import TravelMap from '../components/TravelMap.astro'
 
 import { Image } from 'astro:assets'
 import astro from '../assets/profile.png'
@@ -108,6 +109,9 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 				<p>
 					I translate the needs of curators and researchers into product roadmaps, scalable support programs, and cross-institutional initiatives.
 				</p>
+				<p>
+					In my free time, I like to travel around the world, explore the outdoors, collect vintage computer hardware, and experiment with new technologies. I’m currently pursuing an MBA at the University of Kansas School of Business, where I’m focusing on product management, strategy, and international business.
+				</p>
 			</div>
 		</Section>
 		{
@@ -198,73 +202,7 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 			)
 		}
 
-		<Section title='Projects'>
-			<div
-				class='scroll-fade relative overflow-hidden'
-				id='projects-scroll-fade'
-				data-fade-left='false'
-				data-fade-right='false'
-			>
-				<button
-					type='button'
-					class='scroll-chevron scroll-chevron-left'
-					data-scroll-btn='prev'
-					data-scroll-target='projects'
-					aria-label='Scroll projects left'
-				>
-					<svg viewBox='0 0 24 24' class='h-5 w-5' aria-hidden='true'>
-						<path
-							fill='none'
-							stroke='currentColor'
-							stroke-linecap='round'
-							stroke-linejoin='round'
-							stroke-width='2'
-							d='m15 18l-6-6l6-6'
-						></path>
-					</svg>
-				</button>
-				<button
-					type='button'
-					class='scroll-chevron scroll-chevron-right'
-					data-scroll-btn='next'
-					data-scroll-target='projects'
-					aria-label='Scroll projects right'
-				>
-					<svg viewBox='0 0 24 24' class='h-5 w-5' aria-hidden='true'>
-						<path
-							fill='none'
-							stroke='currentColor'
-							stroke-linecap='round'
-							stroke-linejoin='round'
-							stroke-width='2'
-							d='m9 6l6 6l-6 6'
-						></path>
-					</svg>
-				</button>
-				<ul
-					class='scrollbar-hide m-0 flex list-none items-stretch gap-x-3 overflow-x-auto p-0 pb-2'
-					data-scroll='projects'
-				>
-					{
-						projectCards.map((project) => (
-							<li class='flex'>
-								<ProjectCard
-									href={project.href}
-									heading={project.heading}
-									subheading={project.subheading}
-									imagePath={project.imagePath}
-									altText={project.altText}
-									class='min-w-[280px] sm:min-w-[320px]'
-								/>
-							</li>
-						))
-					}
-				</ul>
-			</div>
-		</Section>
-
-
-		<Section title='Experience'>
+		<Section title='Professional Roles'>
 			<Card
 				heading='Assistant Director'
 				subheading='Specify Collections Consortium, University of Kansas'
@@ -562,6 +500,75 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 						</article>
 					</div>
 				</div>
+			</div>
+		</Section>
+
+		<Section title='Travel'>
+			<TravelMap />
+		</Section>
+
+		<Section title='Projects'>
+			<div
+				class='scroll-fade relative overflow-hidden'
+				id='projects-scroll-fade'
+				data-fade-left='false'
+				data-fade-right='false'
+			>
+				<button
+					type='button'
+					class='scroll-chevron scroll-chevron-left'
+					data-scroll-btn='prev'
+					data-scroll-target='projects'
+					aria-label='Scroll projects left'
+				>
+					<svg viewBox='0 0 24 24' class='h-5 w-5' aria-hidden='true'>
+						<path
+							fill='none'
+							stroke='currentColor'
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							stroke-width='2'
+							d='m15 18l-6-6l6-6'
+						></path>
+					</svg>
+				</button>
+				<button
+					type='button'
+					class='scroll-chevron scroll-chevron-right'
+					data-scroll-btn='next'
+					data-scroll-target='projects'
+					aria-label='Scroll projects right'
+				>
+					<svg viewBox='0 0 24 24' class='h-5 w-5' aria-hidden='true'>
+						<path
+							fill='none'
+							stroke='currentColor'
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							stroke-width='2'
+							d='m9 6l6 6l-6 6'
+						></path>
+					</svg>
+				</button>
+				<ul
+					class='scrollbar-hide m-0 flex list-none items-stretch gap-x-3 overflow-x-auto p-0 pb-2'
+					data-scroll='projects'
+				>
+					{
+						projectCards.map((project) => (
+							<li class='flex'>
+								<ProjectCard
+									href={project.href}
+									heading={project.heading}
+									subheading={project.subheading}
+									imagePath={project.imagePath}
+									altText={project.altText}
+									class='min-w-[280px] sm:min-w-[320px]'
+								/>
+							</li>
+						))
+					}
+				</ul>
 			</div>
 		</Section>
 

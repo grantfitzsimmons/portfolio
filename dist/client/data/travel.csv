@@ -1,0 +1,61 @@
+status,continent,country,region,place,latitude,longitude,visits
+visited,North America,United States,Kansas,Lawrence,38.9717,-95.2353,
+visited,North America,United States,Kansas,Emporia,38.4039,-96.1817,
+visited,North America,United States,Kansas,Manhattan,39.1836,-96.5717,
+visited,North America,United States,Kansas,Abilene,38.9172,-97.2139,
+visited,North America,United States,Missouri,Kansas City,39.0997,-94.5786,Frequent visits
+visited,North America,United States,Missouri,St. Louis,38.6270,-90.1994,March 2015|November 2021
+visited,North America,United States,Missouri,Branson,36.6437,-93.2185,May 2015|March 2018|June 2019
+visited,North America,United States,Missouri,Springfield,37.2089,-93.2923,March 2018|March 2022
+visited,North America,United States,Minnesota,Minneapolis,44.9778,-93.2650,November 2024
+visited,North America,United States,Illinois,Chicago,41.8781,-87.6298,July 2015|April 2022|June 2026
+visited,North America,United States,Colorado,Denver,39.7392,-104.9903,July 2017|April 2018|February 2019|August 2023
+visited,North America,United States,Colorado,Colorado Springs,38.8339,-104.8214,July 2016|February 2019
+visited,North America,United States,Nebraska,Omaha,41.2565,-95.9345,August 2020
+visited,North America,United States,Arkansas,Bentonville,36.3729,-94.2088,May 2026
+visited,North America,United States,Arkansas,Eureka Springs,36.4023,-93.7379,July 2018|July 2020
+visited,North America,United States,Oklahoma,Tulsa,36.1540,-95.9928,August 2021
+visited,North America,United States,Oklahoma,Oklahoma City,35.4676,-97.5164,August 2021
+visited,North America,United States,Oklahoma,Picher,36.9823,-94.8302,August 2021
+visited,North America,United States,Texas,Dallas,32.7767,-96.7970,March 2020
+visited,North America,United States,Texas,San Antonio,29.4252,-98.4946,October 2024
+visited,North America,United States,Florida,Miami,25.7617,-80.1918,July 2021
+visited,North America,United States,Florida,Orlando,28.5383,-81.3792,June 2019|March 2021
+visited,North America,United States,Florida,Brooksville,28.5553,-82.3879,February 2024|May 2026
+visited,North America,United States,District of Columbia,Washington,38.9072,-77.0369,February 2022|August 2022
+visited,North America,United States,New York,New York City,40.7128,-74.0060,July 2021
+visited,North America,United States,Nevada,Las Vegas,36.1699,-115.1398,January 2022|May 2023
+visited,North America,United States,California,Los Angeles,34.0522,-118.2437,November 2023|May 2025
+visited,North America,United States,California,San Francisco,37.7749,-122.4194,July 2019|May 2023
+visited,North America,United States,California,Cupertino,37.3230,-122.0322,July 2019
+visited,North America,United States,Alaska,Anchorage,61.2181,-149.9003,August 2026
+visited,North America,United States,Washington,Seattle,47.6062,-122.3321,August 2025
+visited,North America,Canada,British Columbia,Victoria,48.4284,-123.3656,February 2024
+visited,North America,Mexico,Quintana Roo,Cancún,21.1619,-86.8515,July 2016|December 2020|October 2022
+visited,North America,Mexico,Baja California Sur,San José del Cabo,23.0637,-109.7024,July 2014|June 2018
+visited,North America,Mexico,Jalisco,Puerto Vallarta,20.6534,-105.2253,Summer 2012
+visited,Asia,Japan,Tokyo,Tokyo,35.6762,139.6503,September 2024
+visited,Oceania,Australia,Western Australia,Perth,-31.9523,115.8613,September 2024
+visited,Europe,Italy,Veneto,Paderno del Grappa,45.8281,11.8569,May–June 2022
+visited,Europe,Italy,Veneto,Crespano del Grappa,45.8269,11.8343,June 2022
+visited,Europe,Italy,Veneto,Castelfranco Veneto,45.6717,11.9270,June 2022
+visited,Europe,Italy,Veneto,Crocetta del Montello,45.8362,12.0340,June 2022
+visited,Europe,Italy,Veneto,Venice,45.4408,12.3155,June 2022
+visited,Europe,Italy,Lazio,Rome,41.9028,12.4964,June 2022
+visited,Europe,Italy,Emilia-Romagna,Bologna,44.4949,11.3426,June 2022
+visited,Europe,Italy,Tuscany,Florence,43.7696,11.2558,June 2022
+visited,Europe,United Kingdom,England,London,51.5074,-0.1278,June 2022
+visited,Europe,Germany,Bavaria,Munich,48.1351,11.5820,June 2022
+visited,Europe,Norway,Oslo,Oslo,59.9139,10.7522,September 2026
+visited,Europe,Norway,Viken,Jevnaker,60.2415,10.3859,September 2026
+visited,Europe,Austria,Tyrol,Innsbruck,47.2692,11.4041,June 2022
+visited,Europe,France,Île-de-France,Paris,48.8566,2.3522,June 2026
+visited,Europe,Spain,Community of Madrid,Madrid,40.4168,-3.7038,December 2025
+visited,Europe,Spain,Andalusia,Seville,37.3891,-5.9845,December 2025
+visited,Europe,Vatican City,Vatican City,Vatican City,41.9029,12.4534,June 2022
+visited,Europe,Switzerland,Zurich,Zurich,47.3769,8.5417,June 2023
+visited,Europe,Switzerland,Vaud,Lausanne,46.5197,6.6323,June 2023|June 2026
+visited,Europe,Switzerland,Bern,Bern,46.9480,7.4474,June 2023
+visited,Europe,Switzerland,Basel-Stadt,Basel,47.5596,7.5886,June 2023
+visited,Europe,Switzerland,Geneva,Geneva,46.2044,6.1432,June 2023|June 2026
+visited,Africa,South Africa,Western Cape,Cape Town,-33.9249,18.4241,September 2026
