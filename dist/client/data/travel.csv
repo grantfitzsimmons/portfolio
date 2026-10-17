@@ -22,9 +22,10 @@ visited,North America,United States,Texas,San Antonio,29.4252,-98.4946,October 2
 visited,North America,United States,Florida,Miami,25.7617,-80.1918,July 2021
 visited,North America,United States,Florida,Orlando,28.5383,-81.3792,June 2019|March 2021
 visited,North America,United States,Florida,Brooksville,28.5553,-82.3879,February 2024|May 2026
+visited,North America,United States,Florida,Gainesville,29.6516,-82.3248,October 2025
 visited,North America,United States,District of Columbia,Washington,38.9072,-77.0369,February 2022|August 2022
 visited,North America,United States,New York,New York City,40.7128,-74.0060,July 2021
-visited,North America,United States,Nevada,Las Vegas,36.1699,-115.1398,January 2022|May 2023
+visited,North America,United States,Nevada,Las Vegas,36.1699,-115.1398,January 2022|May 2023|May 2025
 visited,North America,United States,California,Los Angeles,34.0522,-118.2437,November 2023|May 2025
 visited,North America,United States,California,San Francisco,37.7749,-122.4194,July 2019|May 2023
 visited,North America,United States,California,Cupertino,37.3230,-122.0322,July 2019
@@ -35,6 +36,7 @@ visited,North America,Mexico,Quintana Roo,Cancún,21.1619,-86.8515,July 2016|Dec
 visited,North America,Mexico,Baja California Sur,San José del Cabo,23.0637,-109.7024,July 2014|June 2018
 visited,North America,Mexico,Jalisco,Puerto Vallarta,20.6534,-105.2253,Summer 2012
 visited,Asia,Japan,Tokyo,Tokyo,35.6762,139.6503,September 2024
+visited,Asia,Japan,Okinawa Prefecture,Okinawa,26.3344,127.8056,September 2024
 visited,Oceania,Australia,Western Australia,Perth,-31.9523,115.8613,September 2024
 visited,Europe,Italy,Veneto,Paderno del Grappa,45.8281,11.8569,May–June 2022
 visited,Europe,Italy,Veneto,Crespano del Grappa,45.8269,11.8343,June 2022
