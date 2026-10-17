@@ -8,6 +8,9 @@ import SkillLayout from '../components/SkillLayout.astro'
 
 import { Image } from 'astro:assets'
 import astro from '../assets/profile.png'
+import idigbioLogo from '../assets/idigbio-logo.png'
+import spnhcLogo from '../assets/spnhc-logo.png'
+import tdwgLogo from '../assets/tdwg-logo.svg'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 import { projectCards } from '../data/projects'
@@ -44,14 +47,14 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 					<p class='font-medium'>Send me a message!</p>
 				</a>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Specify Collections Consortium'>
+					<!-- <Label title='Specify Collections Consortium'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
 								d='M4.615 20q-.69 0-1.152-.462Q3 19.075 3 18.385v-9.77q0-.69.463-1.152Q3.925 7 4.615 7H9V5.615q0-.69.463-1.152Q9.925 4 10.615 4h2.77q.69 0 1.153.463q.462.462.462 1.152V7h4.385q.69 0 1.152.463q.463.462.463 1.152v9.77q0 .69-.462 1.152q-.463.463-1.153.463zm0-1h14.77q.23 0 .423-.192q.192-.193.192-.423v-9.77q0-.23-.192-.423Q19.615 8 19.385 8H4.615q-.23 0-.423.192Q4 8.385 4 8.615v9.77q0 .23.192.423q.193.192.423.192M10 7h4V5.615q0-.23-.192-.423Q13.615 5 13.385 5h-2.77q-.23 0-.423.192q-.192.193-.192.423zM4 19V8z'
 							></path></svg
 						>
-					</Label>
+					</Label> -->
 					<Label title='Kansas, United States'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
@@ -441,7 +444,7 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>3.95/4.0 GPA; University of Kansas Honor Roll</li>
+					<li>University of Kansas Honor Roll</li>
 					<li>Studied cross-cultural management and international business systems in Paderno del Grappa, Italy (<a class="text-blue-500" href="https://www.cimbaitaly.com/">CIMBA</a>).</li>
 				</ul>
 			</Card>
@@ -453,6 +456,113 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-12 w-auto md:-left-16'
 			/> -->
+		</Section>
+
+		<Section title='Conference Presentations'>
+			<div class='space-y-5 text-muted-foreground'>
+				<div>
+					<h3 class='mb-3 text-sm font-semibold uppercase tracking-wide text-foreground'>Conference talks</h3>
+					<div class='grid items-start gap-3 sm:grid-cols-2'>
+						<div class='space-y-3'>
+							<article class='overflow-hidden rounded-2xl border border-border bg-primary-foreground'>
+								<a href='https://spnhc.org/' target='_blank' rel='noreferrer' class='group flex h-24 items-center justify-center border-b border-border px-5' aria-label='Visit SPNHC'>
+									<Image src={spnhcLogo} alt='SPNHC' class='h-auto max-h-12 w-full object-contain transition-transform group-hover:scale-[1.03]' />
+								</a>
+								<div class='p-4'>
+									<h4 class='font-semibold text-foreground'>SPNHC</h4>
+									<p class='text-xs'>Society for the Preservation of Natural History Collections</p>
+									<ul class='mt-3 space-y-3'>
+										<li><p class='font-medium text-foreground'>Advancing Biological Collections Computing with Specify 7</p><p class='text-xs'>San Francisco · May 2023</p></li>
+										<li><p class='font-medium text-foreground'>Digitization Planning for Large Collections with Specify 7</p><p class='text-xs'>SPNHC–TDWG, Okinawa · September 2024</p></li>
+										<li><p class='font-medium text-foreground'>Extending Specify 7 for Geoscience Collections</p><p class='text-xs'>Okinawa · September 2024</p></li>
+										<li><p class='font-medium text-foreground'>Publishing Your Data with Specify 7</p><p class='text-xs'>Lawrence · May 2025</p></li>
+										<li><p class='font-medium text-foreground'>Specify Spotlight: Improving Data Digitization and Management</p><p class='text-xs'>Lawrence · May 2025</p></li>
+										<li><p class='font-medium text-foreground'>Supporting Collaboration with Specify 7</p><p class='text-xs'>Cape Town · September 2026</p></li>
+										<li><p class='font-medium text-foreground'>Specify Collections Consortium: Transiting to Sustainability</p><p class='text-xs'>Cape Town · September 2026</p></li>
+									</ul>
+								</div>
+							</article>
+
+							<article class='overflow-hidden rounded-2xl border border-border bg-primary-foreground'>
+								<a href='https://biodiversity.ku.edu/news/article/2024/04/26/ku-biodiversity-institute-host-digital-data-conference' target='_blank' rel='noreferrer' class='group flex h-24 flex-col items-center justify-center gap-1 border-b border-border px-5' aria-label='Read about the 2024 Digital Data Conference'>
+									<Image src={idigbioLogo} alt='iDigBio' class='h-11 w-auto object-contain transition-transform group-hover:scale-[1.03]' />
+									<span class='text-xs font-medium text-foreground'>Digital Data Conference</span>
+								</a>
+								<div class='p-4'>
+									<h4 class='font-semibold text-foreground'>Digital Data in Biodiversity Research</h4>
+									<ul class='mt-3'>
+										<li><p class='font-medium text-foreground'>Data Cleaning for Maximum Impact</p><p class='text-xs'>Lawrence · May 2024</p></li>
+									</ul>
+								</div>
+							</article>
+						</div>
+
+						<div class='space-y-3'>
+							<article class='overflow-hidden rounded-2xl border border-border bg-primary-foreground'>
+								<a href='https://www.tdwg.org/' target='_blank' rel='noreferrer' class='group flex h-24 items-center justify-center border-b border-border px-5' aria-label='Visit TDWG'>
+									<Image src={tdwgLogo} alt='Biodiversity Information Standards (TDWG)' class='h-16 w-full object-contain transition-transform group-hover:scale-[1.03]' />
+								</a>
+								<div class='p-4'>
+									<h4 class='font-semibold text-foreground'>TDWG</h4>
+									<p class='text-xs'>Biodiversity Information Standards</p>
+									<ul class='mt-3 space-y-3'>
+										<li><p class='font-medium text-foreground'>Digitization Planning for Large Collections with Specify 7</p><p class='text-xs'>SPNHC–TDWG, Okinawa · September 2024</p></li>
+										<li><p class='font-medium text-foreground'>Meeting Biodiversity Standards with Specify 7</p><p class='text-xs'>Oslo · September 2026</p></li>
+										<li><p class='font-medium text-foreground'>Meeting Biodiversity Data Standards Using Specify Software</p><p class='text-xs'>Symposium host · Oslo · September 2026</p></li>
+									</ul>
+								</div>
+							</article>
+
+							<article class='overflow-hidden rounded-2xl border border-border bg-primary-foreground'>
+								<a href='https://www.minersoc.org/wp-content/uploads/2024/10/European-Mineralogical-Conference-2024.pdf' target='_blank' rel='noreferrer' class='group flex h-24 items-center justify-center gap-3 border-b border-border px-5' aria-label='Read the European Mineralogical Conference 2024 report'>
+									<span class='text-4xl font-semibold tracking-tight text-[#194f90] transition-transform group-hover:scale-[1.03]'>emc<sup>2</sup></span>
+									<span class='max-w-32 text-xs font-medium leading-tight text-foreground'>European Mineralogical Conference</span>
+								</a>
+								<div class='p-4'>
+									<h4 class='font-semibold text-foreground'>EMC 2024</h4>
+									<ul class='mt-3'>
+										<li><p class='font-medium text-foreground'>GeoSpecify, a Collection Management Platform for Geological Objects</p><p class='text-xs'>Dublin · August 2024</p></li>
+									</ul>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<h3 class='mb-3 text-sm font-semibold uppercase tracking-wide text-foreground'>Workshops & invited sessions</h3>
+					<div class='grid items-start gap-3 sm:grid-cols-2'>
+						<article class='rounded-2xl border border-border bg-primary-foreground p-4'>
+							<div class='mb-3 flex items-center gap-2 text-foreground'>
+								<svg viewBox='0 0 24 24' class='h-5 w-5' aria-hidden='true'><path fill='currentColor' d='M4 4h16v10H4zm2 2v6h12V6zm3 10h6v2h4v2H5v-2h4z'></path></svg>
+								<h4 class='font-semibold'>Workshops led</h4>
+							</div>
+							<ul class='ml-4 list-disc space-y-1.5 text-sm'>
+								<li>SwissCollNet Natural History Museums · June 2023</li>
+								<li>Canadian Forest Service · February 2024</li>
+								<li>Western Australia Herbarium · September 2024</li>
+								<li>SPNHC, University of Kansas · May 2025</li>
+								<li>Florida Museum of Natural History · October 2025</li>
+								<li>CSIC-MNCN, CETAF-DEST · December 2025</li>
+								<li>SwissCollNet, Lausanne · June 2026</li>
+								<li>UniMus:Natur, Oslo · September 2026</li>
+							</ul>
+						</article>
+						<article class='rounded-2xl border border-border bg-primary-foreground p-4'>
+							<div class='mb-3 flex items-center gap-2 text-foreground'>
+								<svg viewBox='0 0 24 24' class='h-5 w-5' aria-hidden='true'><path fill='currentColor' d='M7 11a4 4 0 1 1 4-4a4 4 0 0 1-4 4m10 0a3 3 0 1 1 3-3a3 3 0 0 1-3 3M7 13c4 0 7 2 7 5v2H0v-2c0-3 3-5 7-5m10 0c3.3 0 6 1.8 6 4v3h-7v-2c0-1.7-.8-3.1-2.1-4.2A9 9 0 0 1 17 13'></path></svg>
+								<h4 class='font-semibold'>Panels & programs</h4>
+							</div>
+							<ul class='ml-4 list-disc space-y-1.5 text-sm'>
+								<li>BioDigiCon · 2023</li>
+								<li>iDigBio Digitization Academy · 2023–2025</li>
+								<li>Bionomia Workshop · 2024</li>
+								<li>GBIF and TDWG community standards groups</li>
+							</ul>
+						</article>
+					</div>
+				</div>
+			</div>
 		</Section>
 
 		<Section title='Strategic Initiatives'>
@@ -496,49 +606,6 @@ const allPostsByDate: typeof allPosts = sortMDByDate(allPosts).slice(0, MAX_POST
 				imageClass='h-11 w-auto md:-left-16'
 				href='https://doi.org/10.3897/biss.8.141673'
 			/>
-		</Section>
-
-		<Section title='Conference Presentations'>
-			<div class='space-y-4 text-muted-foreground'>
-				<div>
-					<h3 class='font-semibold text-foreground'>Oral Presentations</h3>
-					<ul class='ml-4 list-disc space-y-1 mt-2'>
-						<li>"Advancing Biological Collections Computing with Specify 7: A Year of Transformational Updates" - SPNHC, San Francisco, CA (May 2023)</li>
-						<li>"Data cleaning for maximum impact: Tools and workflows for data providers" - Digital Data Conference, Lawrence, KS (May 2024)</li>
-						<li>"GeoSpecify, a Collection Management Platform for Geological Objects" - European Mineralogical Conference, Dublin, Ireland (August 2024)</li>
-						<li>"Digitization Planning for Large Collections with Specify 7" - SPNHC-TDWG Joint Conference, Okinawa, Japan (September 2024)</li>
-						<li>"Extending Specify 7 for Geoscience Collections" - SPNHC, Okinawa, Japan (September 2024)</li>
-						<li>"Publishing Your Data with Specify 7" - SPNHC, Lawrence, KS (May 2025)</li>
-						<li>"Specify Spotlight: Improving Data Digitization and Management" - SPNHC, Lawrence, KS (May 2025)</li>
-						<li>"Supporting Collaboration with Specify 7" - SPNHC, Cape Town, South Africa (September 2026)</li>
-						<li>"Specify Collections Consortium: Transiting to Sustainability" - SPNHC, Cape Town, South Africa (September 2026)</li>
-						<li>"Meeting Biodiversity Standards with Specify 7" - TDWG, Oslo, Norway (September 2026)</li>
-					</ul>
-				</div>
-				<div>
-					<h3 class='font-semibold text-foreground'>Workshops Led</h3>
-					<ul class='ml-4 list-disc space-y-1 mt-2'>
-						<li>SwissCollNet Natural History Museums - Switzerland (June 2023)</li>
-						<li>Pacific Forestry Centre, Canadian Forest Service - Victoria, BC, Canada (February 2024)</li>
-						<li>Western Australia Herbarium, DBCA - Perth, Australia (September 2024)</li>
-						<li>University of Kansas, SPNHC - Lawrence, KS (May 2025)</li>
-						<li>Florida Museum of Natural History, University of Florida - Gainesville, FL (October 2025)</li>
-						<li>CSIC-MNCN, CETAF-DEST course - Madrid, Spain (December 2025)</li>
-						<li>SwissCollNet, Palais de Rumine - Lausanne, Switzerland (June 2026)</li>
-						<li>UniMus:Natur consortium users, University of Oslo - Oslo, Norway (September 2026)</li>
-					</ul>
-				</div>
-				<div>
-					<h3 class='font-semibold text-foreground'>Invited Panels & Symposia</h3>
-					<ul class='ml-4 list-disc space-y-1 mt-2'>
-						<li>"Digital Data Standards in Biodiversity" - BioDigiCon (2023)</li>
-						<li>"Introduction to Digitization of Biodiversity Specimens" - iDigBio Digitization Academy (2023, 2024, 2025)</li>
-						<li>"Linking People and Specimens" - Bionomia Workshop (2024)</li>
-						<li>Symposium host, "Meeting Biodiversity Data Standards Using Specify Software" - TDWG, Oslo, Norway (September 2026)</li>
-						<li>Community Data Standards Groups - GBIF and TDWG meetings</li>
-					</ul>
-				</div>
-			</div>
 		</Section>
 
 		<Section title='Leadership & Service'>
