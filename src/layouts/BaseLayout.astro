@@ -12,10 +12,12 @@ import { siteConfig } from '@/site-config'
 
 interface Props {
 	meta: SiteMeta
+	fullScreen?: boolean
 }
 
 const {
-	meta: { articleDate, description = siteConfig.description, ogImage, title }
+	meta: { articleDate, description = siteConfig.description, ogImage, title },
+	fullScreen = false
 } = Astro.props
 ---
 
@@ -27,11 +29,17 @@ const {
 	<body class='flex justify-center bg-background'>
 		<ThemeProvider />
 		<main
-		class='flex min-h-screen w-screen max-w-[75rem] flex-col items-center px-6 pb-10 pt-7 text-[0.92rem] leading-relaxed sm:px-10 lg:px-10'
+		class={fullScreen
+			? 'flex h-dvh w-full min-w-0 flex-col text-[0.92rem] leading-relaxed'
+			: 'flex min-h-screen w-screen max-w-[75rem] flex-col items-center px-6 pb-10 pt-7 text-[0.92rem] leading-relaxed sm:px-10 lg:px-10'}
 		>
-			<Header />
+			{fullScreen ? (
+				<div class='w-full max-w-[75rem] self-center px-6 pt-7 sm:px-10'>
+					<Header class='mb-0' />
+				</div>
+			) : <Header />}
 			<slot />
-			<Footer />
+			{!fullScreen && <Footer />}
 		</main>
 		<Analytics />
 		<SpeedInsights />

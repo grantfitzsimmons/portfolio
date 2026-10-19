@@ -1,8 +1,10 @@
 ---
+import { cn } from '@/utils'
 
+const { class: className } = Astro.props
 ---
 
-<header class='mb-12 flex w-full flex-wrap pb-3 text-sm sm:flex-nowrap sm:justify-start'>
+<header class={cn('mb-12 flex w-full flex-wrap pb-3 text-sm sm:flex-nowrap sm:justify-start', className)}>
 	<nav
 		class='relative mx-auto flex w-full flex-wrap items-center justify-between gap-y-3 sm:flex-nowrap'
 		aria-label='global'

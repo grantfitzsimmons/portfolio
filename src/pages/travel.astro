@@ -1,0 +1,11 @@
+---
+import PageLayout from '../layouts/BaseLayout.astro'
+import TravelMap from '../components/TravelMap.astro'
+---
+
+<PageLayout meta={{ title: 'Travel' }} fullScreen>
+	<div class='min-h-0 w-full flex-1'>
+		<h1 class='sr-only'>Travel map</h1>
+		<TravelMap fullPage />
+	</div>
+</PageLayout>
