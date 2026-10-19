@@ -1,12 +1,26 @@
 ---
 import { cn } from '@/utils'
 
-const { class: className, title } = Astro.props
+interface Props {
+	class?: string
+	id?: string
+	title: string
+}
+
+const { class: className, id, title } = Astro.props
+const headingId = id ?? title
+	.toLowerCase()
+	.normalize('NFKD')
+	.replace(/[\u0300-\u036f]/g, '')
+	.replace(/[^a-z0-9]+/g, '-')
+	.replace(/^-|-$/g, '')
 ---
 
 <section class={cn(className, 'flex flex-col gap-y-5 md:flex-row md:gap-y-0')}>
 	<div class='text-xl font-semibold md:w-1/3'>
-		<h2>{title}</h2>
+		<h2 id={headingId}>
+			<a href={`#${headingId}`} class='hover:underline focus-visible:underline'>{title}</a>
+		</h2>
 	</div>
 	<div class='flex flex-col gap-y-3 md:w-2/3'>
 		<slot />
