@@ -29,22 +29,28 @@ const { fullPage = false } = Astro.props
 		<div
 			id='travel-map'
 			class={fullPage ? 'travel-map h-full w-full' : 'travel-map h-[430px] w-full sm:h-[520px]'}
+			data-wheel-zoom={fullPage ? 'true' : 'false'}
 			role='region'
 			aria-label='Interactive map of places Grant Fitzsimmons has traveled'
 		></div>
-		<div
-			class='pointer-events-none absolute bottom-7 left-3 z-[500] flex items-center gap-3 rounded-lg border border-border bg-background/90 px-3 py-2 text-xs shadow-sm backdrop-blur'
-		>
-			<span class='inline-flex items-center gap-1.5'>
-				<span class='flex -space-x-1' aria-hidden='true'>
-					<span class='h-2.5 w-2.5 rounded-full bg-emerald-600 ring-1 ring-background'></span>
-					<span class='h-2.5 w-2.5 rounded-full bg-blue-600 ring-1 ring-background'></span>
-					<span class='h-2.5 w-2.5 rounded-full bg-red-600 ring-1 ring-background'></span>
+		{fullPage ? (
+			<aside class='absolute bottom-7 left-3 z-[500] max-h-[calc(100%-3.5rem)] w-96 max-w-[calc(100%-1.5rem)] overflow-y-auto rounded-lg border border-border bg-background/95 p-3 text-xs shadow-sm backdrop-blur' aria-label='Country key'>
+				<h2 class='mb-2 font-semibold'>Countries</h2>
+				<ul class='grid grid-cols-2 gap-x-3 gap-y-1.5 sm:grid-cols-3' data-country-list></ul>
+			</aside>
+		) : (
+			<div class='pointer-events-none absolute bottom-7 left-3 z-[500] flex items-center gap-3 rounded-lg border border-border bg-background/90 px-3 py-2 text-xs shadow-sm backdrop-blur'>
+				<span class='inline-flex items-center gap-1.5'>
+					<span class='flex -space-x-1' aria-hidden='true'>
+						<span class='h-2.5 w-2.5 rounded-full bg-emerald-600 ring-1 ring-background'></span>
+						<span class='h-2.5 w-2.5 rounded-full bg-blue-600 ring-1 ring-background'></span>
+						<span class='h-2.5 w-2.5 rounded-full bg-red-600 ring-1 ring-background'></span>
+					</span>
+					Countries
 				</span>
-				Countries
-			</span>
-			<span class='hidden items-center gap-1.5' data-want-legend><span class='h-2.5 w-2.5 rounded-full bg-amber-500'></span> Want to go</span>
-		</div>
+				<span class='hidden items-center gap-1.5' data-want-legend><span class='h-2.5 w-2.5 rounded-full bg-amber-500'></span> Want to go</span>
+			</div>
+		)}
 	</div>
 
 	<noscript>
@@ -80,6 +86,7 @@ const { fullPage = false } = Astro.props
 	async function initializeTravelMap(container: HTMLElement) {
 		const totalElement = document.querySelector<HTMLElement>('[data-travel-total]')
 		const countriesElement = document.querySelector<HTMLElement>('[data-travel-countries]')
+		const countryList = document.querySelector<HTMLUListElement>('[data-country-list]')
 		const wantLegend = document.querySelector<HTMLElement>('[data-want-legend]')
 		const L = (window as any).L
 
@@ -93,6 +100,7 @@ const { fullPage = false } = Astro.props
 			const places = parseTravelCsv(await response.text())
 			const visitedPlaces = places.filter((place) => place.status === 'visited')
 			const countries = new Set(visitedPlaces.map((place) => place.country))
+			const countryColors = createCountryColors(visitedPlaces)
 
 			if (totalElement) totalElement.textContent = visitedPlaces.length.toString()
 			if (countriesElement) countriesElement.textContent = countries.size.toString()
@@ -100,11 +108,31 @@ const { fullPage = false } = Astro.props
 				wantLegend.classList.remove('hidden')
 				wantLegend.classList.add('inline-flex')
 			}
+			if (countryList) {
+				const legendEntries = [
+					...[...countryColors].map(([country, color]) => ({ country, color })),
+					...[...new Set(places.filter((place) => place.status === 'want').map((place) => place.country))]
+						.sort()
+						.map((country) => ({ country: `${country} (want to go)`, color: '#d97706' }))
+				]
+				legendEntries.forEach(({ country, color }) => {
+					const item = document.createElement('li')
+					item.className = 'flex items-center gap-1.5'
+					const swatch = document.createElement('span')
+					swatch.className = 'h-2.5 w-2.5 shrink-0 rounded-full ring-1 ring-background'
+					swatch.style.backgroundColor = color
+					swatch.setAttribute('aria-hidden', 'true')
+					const label = document.createElement('span')
+					label.textContent = country
+					item.append(swatch, label)
+					countryList.append(item)
+				})
+			}
 
 			const map = L.map(container, {
 				minZoom: 2,
 				worldCopyJump: true,
-				scrollWheelZoom: false
+				scrollWheelZoom: container.dataset.wheelZoom === 'true'
 			})
 
 			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -113,7 +141,6 @@ const { fullPage = false } = Astro.props
 			}).addTo(map)
 
 			const layer = L.layerGroup().addTo(map)
-			const countryColors = createCountryColors(places)
 			const bounds: Array<[number, number]> = []
 
 			places.forEach((place) => {
