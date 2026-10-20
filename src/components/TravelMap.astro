@@ -1,4 +1,6 @@
 ---
+import 'maplibre-gl/dist/maplibre-gl.css'
+
 interface Props {
 	fullPage?: boolean
 }
@@ -25,14 +27,20 @@ const { fullPage = false } = Astro.props
 		</div>
 	</div>}
 
-	<div class={fullPage ? 'relative h-full overflow-hidden bg-muted' : 'relative overflow-hidden rounded-2xl border border-border bg-muted'}>
+	<div class={fullPage ? 'relative h-full overflow-hidden bg-muted' : 'relative h-[430px] overflow-hidden rounded-2xl border border-border bg-muted sm:h-[520px]'}>
 		<div
 			id='travel-map'
-			class={fullPage ? 'travel-map h-full w-full' : 'travel-map h-[430px] w-full sm:h-[520px]'}
+			class='travel-map h-full w-full'
 			data-wheel-zoom={fullPage ? 'true' : 'false'}
 			role='region'
 			aria-label='Interactive map of places Grant Fitzsimmons has traveled'
 		></div>
+		<div id='travel-globe' class='travel-map !absolute inset-0 hidden' role='region' aria-label='3D globe of places Grant Fitzsimmons has traveled'></div>
+		<div class='absolute right-3 top-3 z-[500] flex rounded-lg border border-border bg-background/95 p-1 text-sm shadow-sm' role='group' aria-label='Map view'>
+			<button type='button' class='rounded-md bg-foreground px-3 py-1.5 font-medium text-background' data-map-view='map' aria-pressed='true'>Map</button>
+			<button type='button' class='rounded-md px-3 py-1.5 font-medium text-foreground hover:bg-muted' data-map-view='globe' aria-pressed='false'>3D Globe</button>
+		</div>
+		<p class='absolute right-3 top-16 z-[500] hidden rounded-md border border-border bg-background/95 px-3 py-2 text-sm shadow-sm' data-globe-status role='status'></p>
 		{fullPage ? (
 			<aside class='absolute bottom-7 left-3 z-[500] max-h-[calc(100%-3.5rem)] w-96 max-w-[calc(100%-1.5rem)] overflow-y-auto rounded-lg border border-border bg-background/95 p-3 text-xs shadow-sm backdrop-blur' aria-label='Country key'>
 				<h2 class='mb-2 font-semibold'>Countries</h2>
@@ -65,6 +73,8 @@ const { fullPage = false } = Astro.props
 	crossorigin=''
 ></script>
 <script>
+	import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
+
 	type TravelPlace = {
 		status: 'visited' | 'want'
 		continent: string
@@ -161,6 +171,91 @@ const { fullPage = false } = Astro.props
 			if (bounds.length > 1) map.fitBounds(bounds, { padding: [28, 28], maxZoom: 6 })
 			else if (bounds.length === 1) map.setView(bounds[0], 8)
 
+			const globeContainer = document.getElementById('travel-globe')
+			const globeStatus = document.querySelector<HTMLElement>('[data-globe-status]')
+			const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-map-view]')
+			if (globeContainer && globeStatus && viewButtons.length) {
+				const globeElement = globeContainer
+				const statusElement = globeStatus
+				let globeMap: import('maplibre-gl').Map | undefined
+				let globeLoading: Promise<void> | undefined
+
+				function setActiveView(view: 'map' | 'globe') {
+					container.classList.toggle('hidden', view === 'globe')
+					globeElement.classList.toggle('hidden', view === 'map')
+					viewButtons.forEach((button) => {
+						const active = button.dataset.mapView === view
+						button.setAttribute('aria-pressed', String(active))
+						button.classList.toggle('bg-foreground', active)
+						button.classList.toggle('text-background', active)
+						button.classList.toggle('text-foreground', !active)
+						button.classList.toggle('hover:bg-muted', !active)
+					})
+					if (view === 'map') map.invalidateSize()
+					else requestAnimationFrame(() => globeMap?.resize())
+				}
+
+				function showGlobeStatus(message: string) {
+					statusElement.textContent = message
+					statusElement.classList.remove('hidden')
+				}
+
+				viewButtons.forEach((button) => button.addEventListener('click', () => {
+					const view = button.dataset.mapView === 'globe' ? 'globe' : 'map'
+					setActiveView(view)
+					if (view === 'map') {
+						statusElement.classList.add('hidden')
+						return
+					}
+					if (globeMap || globeLoading) return
+					showGlobeStatus('Loading globe…')
+					globeLoading = (async () => {
+						const maplibregl = await import('maplibre-gl')
+						maplibregl.setWorkerUrl(workerUrl)
+						const globeSize = Math.min(globeElement.clientWidth, globeElement.clientHeight)
+						const globe = new maplibregl.Map({
+							container: globeElement,
+							style: 'https://tiles.openfreemap.org/styles/liberty',
+							center: [-25, 25],
+							zoom: Math.max(0.5, Math.min(2.1, Math.log2(globeSize / 320) + 0.55))
+						})
+						globeMap = globe
+						globe.on('style.load', () => {
+							globe.setProjection({ type: 'globe' })
+							// Style the boundary layers from the vector tiles for world-scale legibility.
+							for (const layer of ['boundary_2', 'boundary_disputed']) {
+								if (!globe.getLayer(layer)) continue
+								globe.setPaintProperty(layer, 'line-color', '#334155')
+								globe.setPaintProperty(layer, 'line-opacity', 0.9)
+								globe.setPaintProperty(layer, 'line-width', [
+									'interpolate', ['linear'], ['zoom'], 0, 1.2, 3, 1.5, 6, 2
+								])
+							}
+						})
+						globe.once('load', () => statusElement.classList.add('hidden'))
+						globe.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left')
+						places.forEach((place) => {
+							const color = place.status === 'want' ? '#d97706' : countryColors.get(place.country) ?? '#059669'
+							const marker = document.createElement('button')
+							marker.type = 'button'
+							marker.className = 'travel-globe-marker'
+							marker.style.backgroundColor = color
+							marker.setAttribute('aria-label', `${place.place}, ${place.country}`)
+							new maplibregl.Marker({ element: marker, anchor: 'center' })
+								.setLngLat([place.longitude, place.latitude])
+								.setPopup(new maplibregl.Popup({ offset: 12 }).setHTML(buildPopup(place, color)))
+								.addTo(globe)
+						})
+					})().catch((error) => {
+						console.error(error)
+						globeMap?.remove()
+						globeMap = undefined
+						setActiveView('map')
+						showGlobeStatus('3D globe is unavailable in this browser.')
+					}).finally(() => { globeLoading = undefined })
+				}))
+			}
+
 		} catch (error) {
 			console.error(error)
 		}
@@ -223,6 +318,30 @@ const { fullPage = false } = Astro.props
 <style is:global>
 	.travel-map {
 		font-family: inherit;
+	}
+
+	.travel-globe-marker {
+		width: 12px;
+		height: 12px;
+		padding: 0;
+		border: 2px solid white;
+		border-radius: 50%;
+		box-shadow: 0 1px 3px rgb(0 0 0 / 0.35);
+		cursor: pointer;
+	}
+
+	.travel-globe-marker:focus-visible {
+		outline: 2px solid hsl(var(--foreground));
+		outline-offset: 2px;
+	}
+
+	.travel-map .maplibregl-popup-content {
+		padding: 0;
+		border: 1px solid hsl(var(--border));
+		border-radius: 0.75rem;
+		background: hsl(var(--background));
+		color: hsl(var(--foreground));
+		box-shadow: 0 8px 24px rgb(0 0 0 / 0.14);
 	}
 
 	.travel-map .leaflet-control-zoom a {
