@@ -320,6 +320,14 @@ const { fullPage = false } = Astro.props
 		font-family: inherit;
 	}
 
+	.travel-map .leaflet-tile {
+		filter: saturate(0.75);
+	}
+
+	#travel-globe .maplibregl-canvas {
+		filter: saturate(0.65);
+	}
+
 	.travel-globe-marker {
 		width: 12px;
 		height: 12px;
