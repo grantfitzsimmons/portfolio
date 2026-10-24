@@ -241,7 +241,7 @@ const { fullPage = false } = Astro.props
 							marker.className = 'travel-globe-marker'
 							marker.style.backgroundColor = color
 							marker.setAttribute('aria-label', `${place.place}, ${place.country}`)
-							new maplibregl.Marker({ element: marker, anchor: 'center' })
+							new maplibregl.Marker({ element: marker, anchor: 'center', opacityWhenCovered: 0 })
 								.setLngLat([place.longitude, place.latitude])
 								.setPopup(new maplibregl.Popup({ offset: 12 }).setHTML(buildPopup(place, color)))
 								.addTo(globe)
@@ -341,6 +341,11 @@ const { fullPage = false } = Astro.props
 	.travel-globe-marker:focus-visible {
 		outline: 2px solid hsl(var(--foreground));
 		outline-offset: 2px;
+	}
+
+	.travel-globe-marker:global(.maplibregl-marker-covered) {
+		visibility: hidden;
+		pointer-events: none;
 	}
 
 	.travel-map .maplibregl-popup-content {
