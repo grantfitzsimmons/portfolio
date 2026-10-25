@@ -188,20 +188,47 @@ const { fullPage = false } = Astro.props
 								])
 							}
 						})
-						globe.once('load', () => statusElement.classList.add('hidden'))
-						globe.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left')
-						places.forEach((place) => {
-							const color = place.status === 'want' ? '#d97706' : countryColors.get(place.country) ?? '#059669'
-							const marker = document.createElement('button')
-							marker.type = 'button'
-							marker.className = 'travel-globe-marker'
-							marker.style.backgroundColor = color
-							marker.setAttribute('aria-label', `${place.place}, ${place.country}`)
-							new maplibregl.Marker({ element: marker, anchor: 'center', opacityWhenCovered: 0 })
-								.setLngLat([place.longitude, place.latitude])
-								.setPopup(new maplibregl.Popup({ offset: 12 }).setHTML(buildPopup(place, color)))
-								.addTo(globe)
+						globe.once('load', () => {
+							globe.addSource('travel-places', {
+								type: 'geojson',
+								data: {
+									type: 'FeatureCollection',
+									features: places.map((place, index) => ({
+										type: 'Feature',
+										geometry: { type: 'Point', coordinates: [place.longitude, place.latitude] },
+										properties: {
+											index,
+											color: place.status === 'want' ? '#d97706' : countryColors.get(place.country) ?? '#059669'
+										}
+									}))
+								}
+							})
+							// Render dots on the globe surface so the far side is occluded by Earth.
+							globe.addLayer({
+								id: 'travel-places',
+								type: 'circle',
+								source: 'travel-places',
+								paint: {
+									'circle-radius': 5,
+									'circle-color': ['get', 'color'],
+									'circle-stroke-color': '#ffffff',
+									'circle-stroke-width': 2
+								}
+							})
+							globe.on('click', 'travel-places', (event) => {
+								const properties = event.features?.[0]?.properties
+								if (!properties) return
+								const place = places[Number(properties.index)]
+								new maplibregl.Popup({ offset: 12 })
+									.setLngLat([place.longitude, place.latitude])
+									.setHTML(buildPopup(place, String(properties.color)))
+									.addTo(globe)
+							})
+							globe.on('mouseenter', 'travel-places', () => { globe.getCanvas().style.cursor = 'pointer' })
+							globe.on('mouseleave', 'travel-places', () => { globe.getCanvas().style.cursor = '' })
+							statusElement.classList.add('hidden')
 						})
+						globe.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left')
 					})().catch((error) => {
 						console.error(error)
 						globeMap?.remove()
@@ -282,26 +309,6 @@ const { fullPage = false } = Astro.props
 
 	#travel-globe .maplibregl-canvas {
 		filter: saturate(0.65);
-	}
-
-	.travel-globe-marker {
-		width: 12px;
-		height: 12px;
-		padding: 0;
-		border: 2px solid white;
-		border-radius: 50%;
-		box-shadow: 0 1px 3px rgb(0 0 0 / 0.35);
-		cursor: pointer;
-	}
-
-	.travel-globe-marker:focus-visible {
-		outline: 2px solid hsl(var(--foreground));
-		outline-offset: 2px;
-	}
-
-	.travel-globe-marker:global(.maplibregl-marker-covered) {
-		visibility: hidden;
-		pointer-events: none;
 	}
 
 	.travel-map .maplibregl-popup-content {
