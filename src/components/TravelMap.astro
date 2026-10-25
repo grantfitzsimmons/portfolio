@@ -171,21 +171,38 @@ const { fullPage = false } = Astro.props
 						const globeSize = Math.min(globeElement.clientWidth, globeElement.clientHeight)
 						const globe = new maplibregl.Map({
 							container: globeElement,
-							style: 'https://tiles.openfreemap.org/styles/liberty',
+							style: 'https://tiles.openfreemap.org/styles/positron',
 							center: [-25, 25],
 							zoom: Math.max(0.5, Math.min(2.1, Math.log2(globeSize / 320) + 0.55))
 						})
 						globeMap = globe
 						globe.on('style.load', () => {
 							globe.setProjection({ type: 'globe' })
-							// Style the boundary layers from the vector tiles for world-scale legibility.
+							// Keep the atlas focused on land, water, country borders and country names.
+							const atlasLayers = new Set([
+								'background', 'water', 'landcover_ice_shelf', 'landcover_glacier',
+								'boundary_2', 'boundary_disputed',
+								'label_country_1', 'label_country_2', 'label_country_3'
+							])
+							for (const layer of globe.getStyle().layers) {
+								if (!atlasLayers.has(layer.id)) globe.setLayoutProperty(layer.id, 'visibility', 'none')
+							}
+							globe.setPaintProperty('background', 'background-color', '#f3efe4')
+							globe.setPaintProperty('water', 'fill-color', '#8fb3c7')
 							for (const layer of ['boundary_2', 'boundary_disputed']) {
 								if (!globe.getLayer(layer)) continue
-								globe.setPaintProperty(layer, 'line-color', '#334155')
-								globe.setPaintProperty(layer, 'line-opacity', 0.9)
+								globe.setPaintProperty(layer, 'line-color', '#9c9c91')
+								globe.setPaintProperty(layer, 'line-opacity', 0.7)
 								globe.setPaintProperty(layer, 'line-width', [
-									'interpolate', ['linear'], ['zoom'], 0, 1.2, 3, 1.5, 6, 2
+									'interpolate', ['linear'], ['zoom'], 0, 0.5, 3, 0.7, 6, 1
 								])
+							}
+							for (const layer of ['label_country_1', 'label_country_2', 'label_country_3']) {
+								globe.setLayoutProperty(layer, 'text-field', ['coalesce', ['get', 'name_en'], ['get', 'name:latin'], ['get', 'name']])
+								globe.setLayoutProperty(layer, 'text-font', ['Noto Sans Regular'])
+								globe.setPaintProperty(layer, 'text-color', '#4b5354')
+								globe.setPaintProperty(layer, 'text-halo-color', '#f3efe4')
+								globe.setPaintProperty(layer, 'text-halo-width', 1)
 							}
 						})
 						globe.once('load', () => {
@@ -305,10 +322,6 @@ const { fullPage = false } = Astro.props
 
 	.travel-map .leaflet-tile {
 		filter: saturate(0.75);
-	}
-
-	#travel-globe .maplibregl-canvas {
-		filter: saturate(0.65);
 	}
 
 	.travel-map .maplibregl-popup-content {
